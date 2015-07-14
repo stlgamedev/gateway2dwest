@@ -10,3 +10,7 @@ Open Source St. Louis Game Dev Community Project 2D Summer 2015
 * Kick off project
 * Establish genre
 * Make technology decision
+
+# Project Resources
+* Hipchat Public Chat Room: https://www.hipchat.com/gUNi66HSC
+

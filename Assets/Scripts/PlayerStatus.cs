@@ -15,7 +15,7 @@ public class PlayerStatus : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (poisioned) {
-			hitPoints -= Time.deltaTime * 10.0f;
+			hitPoints -= Time.deltaTime * 5.0f;
 		}
 	}
 }

@@ -173,14 +173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkAfterTime: 0
-  repeatCheckTime: 1
+  checkAfterTime: 1
+  repeatCheckTime: 0
   repeatEveryTime: 1
   checkAfterFrames: 30
   repeatCheckFrame: 0
   repeatEveryFrame: 1
   hasFailed: 0
-  checkMethods: 4
+  checkMethods: 1
   m_ActionBase: {fileID: 2018396795}
   checksPerformed: 0
 --- !u!114 &288349775
@@ -195,13 +195,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkAfterTime: 1
-  repeatCheckTime: 1
+  repeatCheckTime: 0
   repeatEveryTime: 1
   checkAfterFrames: 30
   repeatCheckFrame: 0
   repeatEveryFrame: 1
   hasFailed: 0
-  checkMethods: 4
+  checkMethods: 1
   m_ActionBase: {fileID: 172878391}
   checksPerformed: 0
 --- !u!1001 &325479348

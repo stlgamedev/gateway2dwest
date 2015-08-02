@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour {
 
 	public float movementSpeed = 2.0f;
-
 	public InputHelper inputHelper;
 
 	// Use this for initialization
@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		var axis = inputHelper.axisRaw ();
+		var axis = inputHelper.axisRaw();
 		if (axis != Vector2.zero) {
-			transform.position += new Vector3(axis.x * movementSpeed * Time.deltaTime, axis.y * movementSpeed * Time.deltaTime, 0);
+			transform.position += new Vector3 (axis.x * movementSpeed * inputHelper.deltaTime, axis.y * movementSpeed * inputHelper.deltaTime, 0);
 		}
 	}
 }

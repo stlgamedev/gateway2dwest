@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &288349772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,6 +401,46 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 405760, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
   m_PrefabInternal: {fileID: 800120429}
+--- !u!1 &828397536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 828397538}
+  - 114: {fileID: 828397537}
+  m_Layer: 0
+  m_Name: TestRunner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &828397537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 828397536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3afc1c624179749bcdecf7b0224902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTest: {fileID: 0}
+--- !u!4 &828397538
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 828397536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &842247444
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +575,7 @@ GameObject:
   - 114: {fileID: 891966643}
   - 114: {fileID: 891966644}
   m_Layer: 0
-  m_Name: Player Movement With MockInputHelper
+  m_Name: Player can move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,7 +696,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11493132, guid: cf342c3a1cf294d53b94b546132af6bc, type: 2}
       propertyPath: mockAxisRaw.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11493132, guid: cf342c3a1cf294d53b94b546132af6bc, type: 2}
       propertyPath: allowMockInput
@@ -675,46 +715,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 454198, guid: cf342c3a1cf294d53b94b546132af6bc, type: 2}
   m_PrefabInternal: {fileID: 1221398666}
---- !u!1 &1349624338
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1349624340}
-  - 114: {fileID: 1349624339}
-  m_Layer: 0
-  m_Name: TestRunner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1349624339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1349624338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c3afc1c624179749bcdecf7b0224902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTest: {fileID: 0}
---- !u!4 &1349624340
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1349624338}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1 &1704677485
 GameObject:
   m_ObjectHideFlags: 0

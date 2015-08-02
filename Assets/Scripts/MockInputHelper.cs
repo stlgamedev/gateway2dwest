@@ -7,6 +7,17 @@ public class MockInputHelper : InputHelper {
 	
 	public Vector2 mockAxisRaw = new Vector2(0, 0);
 
+	public override float deltaTime { get {
+			if (customDeltaTime.HasValue) {
+				return customDeltaTime.Value;
+			} else {
+				return Time.deltaTime;
+			}
+		}
+	}
+
+	public float? customDeltaTime = null;
+
 		// Use this for initialization
 	void Start () {
 		

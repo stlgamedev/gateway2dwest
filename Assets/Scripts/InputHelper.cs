@@ -5,6 +5,10 @@ public class InputHelper : MonoBehaviour {
 	public string horizontalAxis = "Horizontal";
 	public string verticalAxis = "Vertical";
 
+	public virtual float deltaTime {
+		get {return Time.deltaTime;}
+	}
+
 	// Use this for initialization
 	void Start () {
 	

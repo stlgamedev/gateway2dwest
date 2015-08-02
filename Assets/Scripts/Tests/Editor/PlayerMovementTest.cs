@@ -44,5 +44,24 @@ namespace UnityTest
 			Assert.AreEqual (new Vector3(testObject.movementSpeed, 0, 0), testObject.transform.position);
 		}
 
+		
+		[Test]
+		[Category("Player Movement")]
+		public void PlayerMovesAtNormalizedSpeedWhenMovingDiagonal ()
+		{
+			//Arrange
+			inputHelper.mockAxisRaw = new Vector2 (1, 1);
+			inputHelper.customDeltaTime = 1.0f;
+			//Act
+			testHelper.Update(testObject);
+			
+			//Assert
+			Vector2 expectedResult = new Vector2 (1, 1);
+			expectedResult.Normalize ();
+			expectedResult = expectedResult * testObject.movementSpeed;
+
+			Assert.AreEqual (new Vector3(expectedResult.x, expectedResult.y, 0), testObject.transform.position);
+		}
+
 	}
 }

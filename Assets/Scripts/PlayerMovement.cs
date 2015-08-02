@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		var axis = inputHelper.axisRaw();
 		if (axis != Vector2.zero) {
+			axis.Normalize();
 			transform.position += new Vector3 (axis.x * movementSpeed * inputHelper.deltaTime, axis.y * movementSpeed * inputHelper.deltaTime, 0);
 		}
 	}

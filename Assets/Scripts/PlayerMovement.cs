@@ -21,16 +21,21 @@ public class PlayerMovement : MonoBehaviour {
 				axis.Normalize ();
 			}
 			if (Mathf.Abs (axis.x) > Mathf.Abs (axis.y)) {
-				animator.SetFloat ("HorizontalMovement", axis.x);
-				animator.SetFloat ("VerticalMovement", 0.0f);
+				updateAnimationParameters(axis.x, 0.0f);
 			} else {
-				animator.SetFloat ("HorizontalMovement", 0.0f);
-				animator.SetFloat ("VerticalMovement", axis.y);
+				updateAnimationParameters(0.0f, axis.y);
 			}
 			transform.position += new Vector3 (axis.x * movementSpeed * inputHelper.deltaTime, axis.y * movementSpeed * inputHelper.deltaTime, 0);
 		} else {
-			animator.SetFloat ("HorizontalMovement", 0.0f);
-			animator.SetFloat ("VerticalMovement", 0.0f);
+			updateAnimationParameters(0, 0);
+		}
+	}
+
+	void updateAnimationParameters (float x, float y)
+	{
+		if (animator) {
+			animator.SetFloat ("HorizontalMovement", x);
+			animator.SetFloat ("VerticalMovement", y);
 		}
 	}
 }

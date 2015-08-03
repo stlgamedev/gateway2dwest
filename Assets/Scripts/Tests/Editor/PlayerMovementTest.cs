@@ -62,6 +62,23 @@ namespace UnityTest
 
 			Assert.AreEqual (new Vector3(expectedResult.x, expectedResult.y, 0), testObject.transform.position);
 		}
+		
+		[Test]
+		[Category("Player Movement")]
+		public void PlayerMovesAtAnalogSpeedWhenMovementIsInAnalog ()
+		{
+			//Arrange
+			inputHelper.mockAxisRaw = new Vector2 (0.5f, 0.5f);
+			inputHelper.customDeltaTime = 1.0f;
+			//Act
+			testHelper.Update(testObject);
+			
+			//Assert
+			Vector2 expectedResult = new Vector2 (0.5f, 0.5f);
+			expectedResult = expectedResult * testObject.movementSpeed;
+			
+			Assert.AreEqual (new Vector3(expectedResult.x, expectedResult.y, 0), testObject.transform.position);
+		}
 
 	}
 }

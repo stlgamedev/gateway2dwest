@@ -25,3 +25,6 @@ UnityVS
 #force inclusion of meta files
 !*.*.meta
 !*.meta
+
+# Mac OS X Finder
+.DS_Store

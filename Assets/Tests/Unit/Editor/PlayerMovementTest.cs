@@ -23,6 +23,10 @@ namespace UnityTest
 			testObject = testHelper.InstantiateScript<PlayerMovement>();
 			inputHelper = testHelper.InstantiateScript<MockInputHelper>();
 			testObject.inputHelper = inputHelper;
+			testObject.gameObject.AddComponent<Rigidbody2D>();
+			testObject.gameObject.AddComponent<Animator> ();
+
+			testHelper.Start(testObject);
 		}
 
 		[TearDown]
@@ -36,12 +40,12 @@ namespace UnityTest
 		{
 			//Arrange
 			inputHelper.mockAxisRaw = new Vector2 (1, 0);
-			inputHelper.customDeltaTime = 1.0f;
 			//Act
 			testHelper.Update(testObject);
 
 			//Assert
-			Assert.AreEqual (new Vector3(testObject.movementSpeed, 0, 0), testObject.transform.position);
+			var rb = testObject.GetComponent<Rigidbody2D> ();
+			Assert.AreEqual (new Vector2(2, 0), rb.velocity);
 		}
 
 		
@@ -51,7 +55,6 @@ namespace UnityTest
 		{
 			//Arrange
 			inputHelper.mockAxisRaw = new Vector2 (1, 1);
-			inputHelper.customDeltaTime = 1.0f;
 			//Act
 			testHelper.Update(testObject);
 			
@@ -59,8 +62,9 @@ namespace UnityTest
 			Vector2 expectedResult = new Vector2 (1, 1);
 			expectedResult.Normalize ();
 			expectedResult = expectedResult * testObject.movementSpeed;
-
-			Assert.AreEqual (new Vector3(expectedResult.x, expectedResult.y, 0), testObject.transform.position);
+			
+			var rb = testObject.GetComponent<Rigidbody2D> ();
+			Assert.AreEqual (expectedResult, rb.velocity);
 		}
 		
 		[Test]
@@ -69,7 +73,6 @@ namespace UnityTest
 		{
 			//Arrange
 			inputHelper.mockAxisRaw = new Vector2 (0.5f, 0.5f);
-			inputHelper.customDeltaTime = 1.0f;
 			//Act
 			testHelper.Update(testObject);
 			
@@ -77,7 +80,8 @@ namespace UnityTest
 			Vector2 expectedResult = new Vector2 (0.5f, 0.5f);
 			expectedResult = expectedResult * testObject.movementSpeed;
 			
-			Assert.AreEqual (new Vector3(expectedResult.x, expectedResult.y, 0), testObject.transform.position);
+			var rb = testObject.GetComponent<Rigidbody2D> ();
+			Assert.AreEqual (new Vector2(1, 1), rb.velocity);
 		}
 
 	}

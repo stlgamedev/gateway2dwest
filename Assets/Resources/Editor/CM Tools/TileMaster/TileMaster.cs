@@ -612,7 +612,7 @@ public class TileMaster : EditorWindow {
 					TextureImporterType type = new TextureImporterType();
 					type = TextureImporterType.Sprite;
 					ti.textureType = type;
-					ti.spritePixelsToUnits = gridSizeX;
+					ti.spritePixelsPerUnit = gridSizeX;
 					ti.spriteImportMode = SpriteImportMode.Multiple;
 					ti.filterMode = FilterMode.Point;
 										

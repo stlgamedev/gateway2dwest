@@ -8,5 +8,5 @@ Open Source St. Louis Game Dev Community Project 2D Summer 2015
 * https://github.com/IGDAStl/gateway3dwest
 
 # Project Resources
-* Project Public Google Group https://groups.google.com/forum/#!forum/gateway2dwest https://groups.google.com/forum/#!forum/gateway2dwest
+* Project Public Google Group https://groups.google.com/forum/#!forum/gateway2dwest
 

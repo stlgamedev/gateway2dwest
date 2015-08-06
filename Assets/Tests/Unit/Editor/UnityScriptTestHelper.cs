@@ -17,6 +17,11 @@ namespace UnityTest
 			return si.InstantiateScript<T>();
 		}
 
+		public void Start (MonoBehaviour behavior)
+		{
+			RunInstanceMethod (behavior.GetType (), "Start", behavior, null);
+		}
+
 		public void Update(MonoBehaviour behavior) 
 		{
 			RunInstanceMethod (behavior.GetType(), "Update", behavior, null);

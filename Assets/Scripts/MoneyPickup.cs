@@ -11,7 +11,7 @@ public class MoneyPickup : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.transform.root.SendMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
+        col.transform.root.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
         Destroy(gameObject);
     }
 }

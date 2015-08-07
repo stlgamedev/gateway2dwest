@@ -1,11 +1,12 @@
 # gateway2dwest
 Open Source St. Louis Game Dev Community Project 2D Summer 2015
 
+# Check the wiki to see how to get involved:
+* https://github.com/IGDAStl/gateway2dwest/wiki
 
-# Initial Goals
-* Get something moving when you press buttons
-* Determine some possible ways to go that we can decide on next time
-* Demonstrate how people can fork the project next time
+# Check out our sister project here:
+* https://github.com/IGDAStl/gateway3dwest
 
 # Project Resources
-* Hipchat Public Chat Room: https://www.hipchat.com/gUNi66HSC
+* Project Public Google Group https://groups.google.com/forum/#!forum/gateway2dwest
+

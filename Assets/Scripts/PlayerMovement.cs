@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	public float movementSpeed = 2.0f;
     public float damagedMovementSpeed = 4f;
 	public InputHelper inputHelper;
-	public int playerID = 0; //Setting foundation for multiple players
+	
     
 	Animator animator;
 	Rigidbody2D rb;

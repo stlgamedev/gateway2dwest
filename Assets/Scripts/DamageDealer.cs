@@ -4,6 +4,17 @@ using System.Collections;
 public class DamageDealer : MonoBehaviour {
     public float damageToDeal = 1;
 	// Use this for initialization
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        OnTriggerEnter2D(col.collider);
+    }
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        OnTriggerEnter2D(col);
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         OnTriggerEnter2D(col.collider);
@@ -11,6 +22,6 @@ public class DamageDealer : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.transform.root.SendMessage("TakeDamage",new CollisionData(damageToDeal,gameObject), SendMessageOptions.DontRequireReceiver);
+        col.transform.root.BroadcastMessage("TakeDamage",new CollisionData(damageToDeal,gameObject), SendMessageOptions.DontRequireReceiver);
     }
 }

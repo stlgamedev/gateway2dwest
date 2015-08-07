@@ -48,10 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
 	private void SetAnimationParameters (float x, float y)
 	{
-		if (!animator) {
-			animator.SetFloat ("HorizontalMovement", x);
-			animator.SetFloat ("VerticalMovement", y);
-		}
+		animator.SetFloat ("HorizontalMovement", x);
+		animator.SetFloat ("VerticalMovement", y);
 	}
 
 	private Vector2 EnsurePlayerNeverMovesFasterThanMaxSpeed (Vector2 axis)

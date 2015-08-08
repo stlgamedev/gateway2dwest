@@ -2235,6 +2235,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 509579c8a4e7e4529b1999727c312bb0, type: 2}
+    - target: {fileID: 21256406, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300104, guid: 60ac68867429446faa6bae09ec1309e8,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
   m_IsPrefabParent: 0
@@ -2864,7 +2869,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1408349041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,7 +3015,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405760, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6154306, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
       propertyPath: m_Offset.y
@@ -3048,7 +3053,7 @@ Prefab:
     - target: {fileID: 21256406, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300014, guid: 60ac68867429446faa6bae09ec1309e8,
+      objectReference: {fileID: 21300098, guid: 60ac68867429446faa6bae09ec1309e8,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}

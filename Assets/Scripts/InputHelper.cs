@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class InputHelper : MonoBehaviour {
-	public string horizontalAxis = "Horizontal";
-	public string verticalAxis = "Vertical";
+	public string horizontalAxis = "Horizontal1";
+	public string verticalAxis = "Vertical1";
 	
 	public virtual Vector2 axisRaw () {
 		var x = Input.GetAxisRaw (horizontalAxis);

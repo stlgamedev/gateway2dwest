@@ -51,7 +51,7 @@ public class PlayerStatus : MonoBehaviour {
             canTakeDamage = false;
             Invoke("UnlockControls", .08f); //resets taking damage flag
             Invoke("EnableDamage", .35f); //Allows us to take damage again
-            Camera.main.GetComponent<CameraFollow>().ShakeCamera(.08f, .1f);
+            Camera.main.GetComponent<CameraFollow>().ShakeCamera(.12f, .2f);
             Camera.main.GetComponent<AudioSource>().PlayOneShot(damageSound);
         }
     }

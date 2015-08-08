@@ -12,6 +12,8 @@ public class PlayerStatus : MonoBehaviour {
     public bool takingDamage = false;
     public bool canTakeDamage = true;
 
+    public AudioClip damageSound;
+
     public Text moneyUIObject;
 
     public Vector3 attackerPos;
@@ -50,6 +52,7 @@ public class PlayerStatus : MonoBehaviour {
             Invoke("UnlockControls", .08f); //resets taking damage flag
             Invoke("EnableDamage", .35f); //Allows us to take damage again
             Camera.main.GetComponent<CameraFollow>().ShakeCamera(.08f, .1f);
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(damageSound);
         }
     }
 

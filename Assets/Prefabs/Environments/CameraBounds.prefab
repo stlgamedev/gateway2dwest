@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: CameraBounds
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -38,9 +38,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 1.67148638, y: -2.40013885}
+  m_Offset: {x: 8.6300106, y: -3.94855022}
   serializedVersion: 2
-  m_Size: {x: 5.05379009, y: 3.98674393}
+  m_Size: {x: 18.9708481, y: 7.08356667}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

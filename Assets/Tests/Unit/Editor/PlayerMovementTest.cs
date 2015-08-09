@@ -42,6 +42,7 @@ namespace UnityTest
 			inputHelper.mockAxisRaw = new Vector2 (1, 0);
 			//Act
 			testHelper.Update(testObject);
+			testHelper.FixedUpdate (testObject);
 
 			//Assert
 			var rb = testObject.GetComponent<Rigidbody2D> ();
@@ -57,6 +58,7 @@ namespace UnityTest
 			inputHelper.mockAxisRaw = new Vector2 (1, 1);
 			//Act
 			testHelper.Update(testObject);
+			testHelper.FixedUpdate(testObject);
 			
 			//Assert
 			Vector2 expectedResult = new Vector2 (1, 1);
@@ -75,6 +77,7 @@ namespace UnityTest
 			inputHelper.mockAxisRaw = new Vector2 (0.5f, 0.5f);
 			//Act
 			testHelper.Update(testObject);
+			testHelper.FixedUpdate (testObject);
 			
 			//Assert
 			Vector2 expectedResult = new Vector2 (0.5f, 0.5f);

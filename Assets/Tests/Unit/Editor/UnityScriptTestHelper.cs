@@ -26,6 +26,11 @@ namespace UnityTest
 		{
 			RunInstanceMethod (behavior.GetType(), "Update", behavior, null);
 		}
+
+		public void FixedUpdate (MonoBehaviour behavior)
+		{
+			RunInstanceMethod (behavior.GetType(), "FixedUpdate", behavior, null);
+		}
 		
 		public void CleanUp ()
 		{

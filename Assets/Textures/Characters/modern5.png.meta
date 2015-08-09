@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 60ac68867429446faa6bae09ec1309e8
-timeCreated: 1438570954
+timeCreated: 1438924073
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -152,8 +152,8 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_1
       rect:
@@ -162,7 +162,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_2
@@ -172,7 +172,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_3
@@ -182,7 +182,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_4
@@ -192,7 +192,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_5
@@ -202,7 +202,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_6
@@ -212,7 +212,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_7
@@ -222,7 +222,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_8
@@ -232,7 +232,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_9
@@ -242,7 +242,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_10
@@ -252,7 +252,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_11
@@ -262,7 +262,7 @@ TextureImporter:
         y: 448
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_12
@@ -272,7 +272,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_13
@@ -282,7 +282,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_14
@@ -292,7 +292,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_15
@@ -302,7 +302,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_16
@@ -312,7 +312,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_17
@@ -322,7 +322,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_18
@@ -332,7 +332,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_19
@@ -342,7 +342,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_20
@@ -352,7 +352,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_21
@@ -362,7 +362,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_22
@@ -372,7 +372,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_23
@@ -382,7 +382,7 @@ TextureImporter:
         y: 384
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_24
@@ -392,7 +392,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_25
@@ -402,7 +402,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_26
@@ -412,7 +412,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_27
@@ -422,7 +422,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_28
@@ -432,7 +432,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_29
@@ -442,7 +442,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_30
@@ -452,7 +452,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_31
@@ -462,7 +462,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_32
@@ -472,7 +472,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_33
@@ -482,7 +482,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_34
@@ -492,7 +492,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_35
@@ -502,7 +502,7 @@ TextureImporter:
         y: 320
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_36
@@ -512,7 +512,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_37
@@ -522,7 +522,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_38
@@ -532,7 +532,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_39
@@ -542,7 +542,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_40
@@ -552,7 +552,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_41
@@ -562,7 +562,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_42
@@ -572,7 +572,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_43
@@ -582,7 +582,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_44
@@ -592,7 +592,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_45
@@ -602,7 +602,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_46
@@ -612,7 +612,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_47
@@ -622,7 +622,7 @@ TextureImporter:
         y: 256
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_48
@@ -632,7 +632,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_49
@@ -642,7 +642,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_50
@@ -652,7 +652,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_51
@@ -662,7 +662,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_52
@@ -672,7 +672,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_53
@@ -682,7 +682,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_54
@@ -692,7 +692,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_55
@@ -702,7 +702,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_56
@@ -712,7 +712,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_57
@@ -722,7 +722,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_58
@@ -732,7 +732,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_59
@@ -742,7 +742,7 @@ TextureImporter:
         y: 192
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_60
@@ -752,7 +752,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_61
@@ -762,7 +762,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_62
@@ -772,7 +772,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_63
@@ -782,7 +782,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_64
@@ -792,7 +792,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_65
@@ -802,7 +802,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_66
@@ -812,7 +812,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_67
@@ -822,7 +822,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_68
@@ -832,7 +832,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_69
@@ -842,7 +842,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_70
@@ -852,7 +852,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_71
@@ -862,7 +862,7 @@ TextureImporter:
         y: 128
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_72
@@ -872,7 +872,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_73
@@ -882,7 +882,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_74
@@ -892,7 +892,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_75
@@ -902,7 +902,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_76
@@ -912,7 +912,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_77
@@ -922,7 +922,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_78
@@ -932,7 +932,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_79
@@ -942,7 +942,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_80
@@ -952,7 +952,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_81
@@ -962,7 +962,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_82
@@ -972,7 +972,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_83
@@ -982,7 +982,7 @@ TextureImporter:
         y: 64
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_84
@@ -992,7 +992,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_85
@@ -1002,7 +1002,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_86
@@ -1012,7 +1012,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_87
@@ -1022,7 +1022,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_88
@@ -1032,7 +1032,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_89
@@ -1042,7 +1042,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_90
@@ -1052,7 +1052,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_91
@@ -1062,7 +1062,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_92
@@ -1072,7 +1072,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_93
@@ -1082,7 +1082,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_94
@@ -1092,7 +1092,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: modern5_95
@@ -1102,7 +1102,7 @@ TextureImporter:
         y: 0
         width: 46
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 

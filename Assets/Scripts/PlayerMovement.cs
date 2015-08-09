@@ -6,30 +6,48 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	public float movementSpeed = 2.0f;
+    public float damagedMovementSpeed = 4f;
 	public InputHelper inputHelper;
-	public int playerID = 0; //Setting foundation for multiple players
+	
     
 	Animator animator;
 	Rigidbody2D rb;
-
+    PlayerStatus playerStats;
+    Vector2 axis;
 
 	// Use this for initialization
 	void Start ()
 	{
 		animator = GetComponent<Animator> (); //In unity, GetComponent is implicit to the object the script is attached, thus "this" is not needed
 		rb = GetComponent<Rigidbody2D> (); //Gets attached rigidbody2D component
+        playerStats = GetComponent<PlayerStatus>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		Vector2 axis = inputHelper.axisRaw ();			//Get's input from helper class. This allows for unit testing as well as changing input while inside of the game.
-
+		axis = inputHelper.axisRaw ();			//Get's input from helper class. This allows for unit testing as well as changing input while inside of the game.
 		axis = EnsurePlayerNeverMovesFasterThanMaxSpeed (axis);
 		UpdateAnimationStates (axis);
-
-		rb.velocity = axis * movementSpeed;
 	}
+
+    void FixedUpdate()
+    {
+        ApplyMotion(axis);//Moved into Fixed Update since it's a physics update. This should help fix bugs with getting caught between colliders and such.
+    }
+
+    private void ApplyMotion(Vector2 moveDirection)
+    {
+        if (!playerStats.takingDamage)
+        {
+            rb.velocity = moveDirection * movementSpeed; //Normal Movement
+        }
+        else
+        {
+            rb.velocity = (transform.position - playerStats.attackerPos).normalized * damagedMovementSpeed;
+            //Calculates direction from the object attacking us and pushes us away at a set speed while taking damage.
+        }
+    }
 
 	private void UpdateAnimationStates (Vector2 axis)
 	{

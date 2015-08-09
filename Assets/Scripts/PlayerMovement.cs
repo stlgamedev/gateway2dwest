@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	public float movementSpeed = 2.0f;
     public float damagedMovementSpeed = 4f;
 	public InputHelper inputHelper;
+	public float knockbackStunTime = 0.08f;
 
 	private bool disableControls;
 	private Vector2 knockbackDirection;
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 	public void KnockBack(Vector2 direction) {
 		disableControls = true;
 		knockbackDirection = direction;
-		Invoke("ResumeControl", .08f); //resets taking damage flag
+		Invoke("ResumeControl", knockbackStunTime); //resets taking damage flag
 	}
 
 	private void ResumeControl() {

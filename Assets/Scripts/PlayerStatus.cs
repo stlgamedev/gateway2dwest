@@ -9,13 +9,14 @@ public class PlayerStatus : MonoBehaviour {
     public float money = 0;
     
     public bool poisioned = false;
-    public bool canTakeDamage = true;
 
     public AudioClip damageSound;
 
-    public Text moneyUIObject;
+	public Text moneyUIObject;
 
-    Renderer rend;
+	private bool canTakeDamage = true;
+	
+	Renderer rend;
 
 	// Use this for initialization
 	void Start () {
@@ -59,5 +60,6 @@ public class PlayerStatus : MonoBehaviour {
     {
         money += moneyToGive;
         moneyUIObject.text = "$" + money.ToString();
+
     }
 }

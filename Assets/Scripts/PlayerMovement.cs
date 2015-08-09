@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 	Animator animator;
 	Rigidbody2D rb;
     PlayerStatus playerStats;
+    Vector2 axis;
 
 	// Use this for initialization
 	void Start ()
@@ -25,12 +26,15 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		Vector2 axis = inputHelper.axisRaw ();			//Get's input from helper class. This allows for unit testing as well as changing input while inside of the game.
-
+		axis = inputHelper.axisRaw ();			//Get's input from helper class. This allows for unit testing as well as changing input while inside of the game.
 		axis = EnsurePlayerNeverMovesFasterThanMaxSpeed (axis);
 		UpdateAnimationStates (axis);
-        ApplyMotion(axis);
 	}
+
+    void FixedUpdate()
+    {
+        ApplyMotion(axis);//Moved into Fixed Update since it's a physics update. This should help fix bugs with getting caught between colliders and such.
+    }
 
     private void ApplyMotion(Vector2 moveDirection)
     {

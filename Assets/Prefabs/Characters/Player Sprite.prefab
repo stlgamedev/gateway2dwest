@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0505023, y: 1.87594056, z: 9.703125}
+  m_LocalPosition: {x: 1.38, y: 1.87594056, z: 9.703125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,10 +94,8 @@ MonoBehaviour:
   hitPoints: 100
   money: 0
   poisioned: 0
-  takingDamage: 0
-  canTakeDamage: 1
+  damageSound: {fileID: 8300000, guid: 94f2d903738a08e4abaf7a67b66c8add, type: 3}
   moneyUIObject: {fileID: 0}
-  attackerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &11488902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,6 +110,7 @@ MonoBehaviour:
   movementSpeed: 5
   damagedMovementSpeed: 14
   inputHelper: {fileID: 11442158, guid: 325d45982dd2843b68603bfd5b8cea79, type: 2}
+  knockbackStunTime: .0799999982
 --- !u!212 &21256406
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -135,7 +134,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300002, guid: 60ac68867429446faa6bae09ec1309e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

@@ -1,0 +1,104 @@
+﻿Merge branch 'SuperWes/master' into Randy
+
+Conflicts:
+	Assets/Scenes/default.unity
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Randy
+# Your branch is up-to-date with 'origin/Randy'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	renamed:    Assets/Animations/Player Sprite.controller -> Assets/Animations/1 Player Sprite.controller
+#	renamed:    Assets/Animations/Player Sprite.controller.meta -> Assets/Animations/1 Player Sprite.controller.meta
+#	renamed:    Assets/Animations/DownIdle.anim -> Assets/Animations/1DownIdle.anim
+#	renamed:    Assets/Animations/DownIdle.anim.meta -> Assets/Animations/1DownIdle.anim.meta
+#	renamed:    Assets/Animations/DownWalk.anim -> Assets/Animations/1DownWalk.anim
+#	renamed:    Assets/Animations/DownWalk.anim.meta -> Assets/Animations/1DownWalk.anim.meta
+#	renamed:    Assets/Animations/LeftIdle.anim -> Assets/Animations/1LeftIdle.anim
+#	renamed:    Assets/Animations/LeftIdle.anim.meta -> Assets/Animations/1LeftIdle.anim.meta
+#	renamed:    Assets/Animations/LeftWalk.anim -> Assets/Animations/1LeftWalk.anim
+#	renamed:    Assets/Animations/LeftWalk.anim.meta -> Assets/Animations/1LeftWalk.anim.meta
+#	renamed:    Assets/Animations/RightIdle.anim -> Assets/Animations/1RightIdle.anim
+#	renamed:    Assets/Animations/RightIdle.anim.meta -> Assets/Animations/1RightIdle.anim.meta
+#	renamed:    Assets/Animations/RightWalk.anim -> Assets/Animations/1RightWalk.anim
+#	renamed:    Assets/Animations/RightWalk.anim.meta -> Assets/Animations/1RightWalk.anim.meta
+#	renamed:    Assets/Animations/UpIdle.anim -> Assets/Animations/1UpIdle.anim
+#	renamed:    Assets/Animations/UpIdle.anim.meta -> Assets/Animations/1UpIdle.anim.meta
+#	renamed:    Assets/Animations/UpWalk.anim -> Assets/Animations/1UpWalk.anim
+#	renamed:    Assets/Animations/UpWalk.anim.meta -> Assets/Animations/1UpWalk.anim.meta
+#	new file:   Assets/Animations/2 Player Sprite.controller
+#	new file:   Assets/Animations/2 Player Sprite.controller.meta
+#	new file:   Assets/Animations/2DownIdle.anim
+#	new file:   Assets/Animations/2DownIdle.anim.meta
+#	new file:   Assets/Animations/2DownWalk.anim
+#	new file:   Assets/Animations/2DownWalk.anim.meta
+#	new file:   Assets/Animations/2LeftIdle.anim
+#	new file:   Assets/Animations/2LeftIdle.anim.meta
+#	new file:   Assets/Animations/2LeftWalk.anim
+#	new file:   Assets/Animations/2LeftWalk.anim.meta
+#	new file:   Assets/Animations/2RightIdle.anim
+#	new file:   Assets/Animations/2RightIdle.anim.meta
+#	new file:   Assets/Animations/2RightWalk.anim
+#	new file:   Assets/Animations/2RightWalk.anim.meta
+#	new file:   Assets/Animations/2UpIdle.anim
+#	new file:   Assets/Animations/2UpIdle.anim.meta
+#	new file:   Assets/Animations/2UpWalk.anim
+#	new file:   Assets/Animations/2UpWalk.anim.meta
+#	new file:   Assets/Animations/3 Player Sprite.controller
+#	new file:   Assets/Animations/3 Player Sprite.controller.meta
+#	new file:   Assets/Animations/3DownIdle.anim
+#	new file:   Assets/Animations/3DownIdle.anim.meta
+#	new file:   Assets/Animations/3DownWalk.anim
+#	new file:   Assets/Animations/3DownWalk.anim.meta
+#	new file:   Assets/Animations/3LeftIdle.anim
+#	new file:   Assets/Animations/3LeftIdle.anim.meta
+#	new file:   Assets/Animations/3LeftWalk.anim
+#	new file:   Assets/Animations/3LeftWalk.anim.meta
+#	new file:   Assets/Animations/3RightIdle.anim
+#	new file:   Assets/Animations/3RightIdle.anim.meta
+#	new file:   Assets/Animations/3RightWalk.anim
+#	new file:   Assets/Animations/3RightWalk.anim.meta
+#	new file:   Assets/Animations/3UpIdle.anim
+#	new file:   Assets/Animations/3UpIdle.anim.meta
+#	new file:   Assets/Animations/3UpWalk.anim
+#	new file:   Assets/Animations/3UpWalk.anim.meta
+#	new file:   Assets/Animations/4 Player Sprite.controller
+#	new file:   Assets/Animations/4 Player Sprite.controller.meta
+#	new file:   Assets/Animations/4DownIdle.anim
+#	new file:   Assets/Animations/4DownIdle.anim.meta
+#	new file:   Assets/Animations/4DownWalk.anim
+#	new file:   Assets/Animations/4DownWalk.anim.meta
+#	new file:   Assets/Animations/4LeftIdle.anim
+#	new file:   Assets/Animations/4LeftIdle.anim.meta
+#	new file:   Assets/Animations/4LeftWalk.anim
+#	new file:   Assets/Animations/4LeftWalk.anim.meta
+#	new file:   Assets/Animations/4RightIdle.anim
+#	new file:   Assets/Animations/4RightIdle.anim.meta
+#	new file:   Assets/Animations/4RightWalk.anim
+#	new file:   Assets/Animations/4RightWalk.anim.meta
+#	new file:   Assets/Animations/4UpIdle.anim
+#	new file:   Assets/Animations/4UpIdle.anim.meta
+#	new file:   Assets/Animations/4UpWalk.anim
+#	new file:   Assets/Animations/4UpWalk.anim.meta
+#	renamed:    Assets/Prefabs/Characters/InputHelper.prefab -> Assets/Prefabs/Characters/P1InputHelper.prefab
+#	renamed:    Assets/Prefabs/Characters/InputHelper.prefab.meta -> Assets/Prefabs/Characters/P1InputHelper.prefab.meta
+#	new file:   Assets/Prefabs/Characters/P2InputHelper.prefab
+#	new file:   Assets/Prefabs/Characters/P2InputHelper.prefab.meta
+#	new file:   Assets/Prefabs/Characters/P3InputHelper.prefab
+#	new file:   Assets/Prefabs/Characters/P3InputHelper.prefab.meta
+#	new file:   Assets/Prefabs/Characters/P4InputHelper.prefab
+#	new file:   Assets/Prefabs/Characters/P4InputHelper.prefab.meta
+#	modified:   Assets/Scenes/default.unity
+#	modified:   Assets/Scripts/InputHelper.cs
+#	modified:   ProjectSettings/InputManager.asset
+#
+

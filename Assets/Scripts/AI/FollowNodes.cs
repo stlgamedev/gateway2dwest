@@ -23,12 +23,17 @@ public class FollowNodes : MonoBehaviour {
         if (!pauseMove)
         {
             Vector3 moveDirection = (nodesToFollow[nextNode].position - transform.position).normalized;
+                    //Sets the direction we want to go
             transform.position = transform.position + ((moveDirection * movementSpeed) * Time.deltaTime);
-            if ((transform.position - nodesToFollow[nextNode].position).magnitude < .02)
+                    //Sets the new position of the object ignoring collisions (can transport through colliders)
+            if ((transform.position - nodesToFollow[nextNode].position).magnitude < .02) //Checks if we are within a margin of error
             {
-                pauseMove = true;
-                Invoke("UnpauseMove", delayAtNodes);
-                transform.position = nodesToFollow[nextNode].position;
+                if (!pauseMove)
+                {
+                    pauseMove = true; //Set this to not move
+                    Invoke("UnpauseMove", delayAtNodes); //sets us to move after delay time
+                    transform.position = nodesToFollow[nextNode].position; //forces us to exact coordinates
+                }
 
                 if (mirrorPath)
                 {
@@ -36,8 +41,11 @@ public class FollowNodes : MonoBehaviour {
                     {
                         nextNode++;
                         currentNode++;
+                                //Go to the next node
+
                         if (nextNode >= nodesToFollow.Length)
                         {
+                            //If we are at the end of the nodes, start going down
                             goingUp = false;
                             nextNode = nodesToFollow.Length - 2;
                             currentNode = nodesToFollow.Length - 1;
@@ -47,8 +55,11 @@ public class FollowNodes : MonoBehaviour {
                     {
                         nextNode--;
                         currentNode--;
+                                //Go to previous node
+
                         if (nextNode < 0)
                         {
+                            //if we get back to the start, flip around
                             goingUp = true;
                             nextNode = 1;
                             currentNode = 0;
@@ -57,6 +68,7 @@ public class FollowNodes : MonoBehaviour {
                 }
                 else
                 {
+                    //Loops through nodes if mirror is off.
                     nextNode++;
                     currentNode++;
                     if (nextNode >= nodesToFollow.Length)

@@ -23,6 +23,7 @@ public class PlayerStatus : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
+        Globals.Players.Add(gameObject);
 	}
 	
 	// Update is called once per frame

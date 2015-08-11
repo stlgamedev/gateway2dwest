@@ -26,5 +26,6 @@ public class DamageDealer : MonoBehaviour {
 		Vector2 knockbackAngle = -(transform.position - col.gameObject.transform.position).normalized;
 		knockbackAngle.Normalize ();
 		col.GetComponent<PlayerMovement>().KnockBack (knockbackAngle);
+//        col.transform.BroadcastMessage("TakeDamage",new CollisionData(damageToDeal,gameObject), SendMessageOptions.DontRequireReceiver);
     }
 }

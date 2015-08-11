@@ -12,8 +12,11 @@ public class MoneyPickup : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.transform.root.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
+        col.transform.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
+                //Send message to whoever picked up the money.
         Camera.main.GetComponent<AudioSource>().PlayOneShot(pickupSound);
+                //Play sound when picked up.
         Destroy(gameObject);
+                //Destroy self after doing all that.
     }
 }

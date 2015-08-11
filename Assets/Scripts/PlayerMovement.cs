@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = knockbackDirection * damagedMovementSpeed;
             //Calculates direction from the object attacking us and pushes us away at a set speed while taking damage.
+            //This may be changed later to slower speed when damaged. It hasn't been decided yet.
         }
     }
 

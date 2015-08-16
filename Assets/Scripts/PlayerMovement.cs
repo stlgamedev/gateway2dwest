@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-	public void KnockBack(Vector2 direction) {
+	public virtual void KnockBack(Vector2 direction) {
 		disableControls = true;
 		knockbackDirection = direction;
 		Invoke("ResumeControl", knockbackStunTime); //resets taking damage flag

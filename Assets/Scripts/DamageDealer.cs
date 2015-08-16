@@ -23,7 +23,7 @@ public class DamageDealer : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
 		col.GetComponent<PlayerStatus>().TakeDamage (damageToDeal);
-		Vector2 knockbackAngle = -(transform.position - col.gameObject.transform.position).normalized;
+		var knockbackAngle = -(transform.position - col.gameObject.transform.position).normalized;
 		knockbackAngle.Normalize ();
 		col.GetComponent<PlayerMovement>().KnockBack (knockbackAngle);
 //        col.transform.BroadcastMessage("TakeDamage",new CollisionData(damageToDeal,gameObject), SendMessageOptions.DontRequireReceiver);

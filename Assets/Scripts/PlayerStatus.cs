@@ -39,7 +39,7 @@ public class PlayerStatus : MonoBehaviour {
         }
 	}
 
-    public void TakeDamage(float damageToDeal)
+    public virtual void TakeDamage(float damageToDeal)
     {
         if (canTakeDamage)
         {

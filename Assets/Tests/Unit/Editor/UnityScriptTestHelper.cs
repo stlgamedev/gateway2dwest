@@ -31,6 +31,11 @@ namespace UnityTest
 		{
 			RunInstanceMethod (behavior.GetType(), "FixedUpdate", behavior, null);
 		}
+
+		public void OnTriggerEnter2D (MonoBehaviour behavior, BoxCollider2D collider2D)
+		{
+			RunInstanceMethod (behavior.GetType (), "OnTriggerEnter2D", behavior, new object[] {collider2D});
+		}
 		
 		public void CleanUp ()
 		{

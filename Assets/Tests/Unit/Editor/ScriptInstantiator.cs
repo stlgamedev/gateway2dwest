@@ -11,7 +11,7 @@ public class ScriptInstantiator
 		GameObjects = new List<GameObject>();
 	}
 
-	public T InstantiateScript<T>() where T : MonoBehaviour
+	public T InstantiateScript<T>() where T : Behaviour
 	{
 		GameObject gameObject;
 		object prefab = Resources.Load("Prefabs/" + typeof(T).Name);

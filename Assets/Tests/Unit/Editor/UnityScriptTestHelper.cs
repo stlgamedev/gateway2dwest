@@ -12,7 +12,7 @@ namespace UnityTest
 	{
 		private ScriptInstantiator si = new ScriptInstantiator();
 
-		public T InstantiateScript<T>() where T : MonoBehaviour
+		public T InstantiateScript<T>() where T : Behaviour
 		{
 			return si.InstantiateScript<T>();
 		}

@@ -32,9 +32,26 @@ namespace UnityTest
 			RunInstanceMethod (behavior.GetType(), "FixedUpdate", behavior, null);
 		}
 
-		public void OnTriggerEnter2D (MonoBehaviour behavior, BoxCollider2D collider2D)
+		public void OnTriggerEnter2D (MonoBehaviour behavior, Component collider2D)
 		{
 			RunInstanceMethod (behavior.GetType (), "OnTriggerEnter2D", behavior, new object[] {collider2D});
+		}
+		
+		public void OnCollisionStay2D (MonoBehaviour behavior, Collider2D objectCollidingWith)
+		{
+			var collision = createCollisionWithGameObject (objectCollidingWith);
+			RunInstanceMethod (behavior.GetType (), "OnCollisionStay2D", behavior, new object[] {collision});
+		}
+
+		public void OnTriggerStay2D (MonoBehaviour behavior, Component collider2D)
+		{
+			RunInstanceMethod (behavior.GetType (), "OnTriggerStay2D", behavior, new object[] {collider2D});
+		}
+
+		public void OnCollisionEnter2D (MonoBehaviour behavior, Collider2D objectCollidingWith)
+		{
+			var collision = createCollisionWithGameObject (objectCollidingWith);
+			RunInstanceMethod (behavior.GetType (), "OnCollisionEnter2D", behavior, new object[] {collision});
 		}
 		
 		public void CleanUp ()
@@ -82,6 +99,14 @@ namespace UnityTest
 			return RunMethod(t, strMethod, 
 			                 null, aobjParams, eFlags);
 		} //end of method
+
+		private static Collision2D createCollisionWithGameObject (Collider2D objectCollidingWith)
+		{
+			var collision = new Collision2D ();
+			var prop = collision.GetType ().GetField ("m_Collider", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			prop.SetValue (collision, objectCollidingWith);
+			return collision;
+		}
 	}
 
 }

@@ -157,14 +157,14 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 3
-    dead: .00100000005
+    gravity: 0
+    dead: .189999998
     sensitivity: 1
-    snap: 1
+    snap: 0
     invert: 0
-    type: 0
+    type: 2
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Vertical1
     descriptiveName: 
@@ -301,10 +301,10 @@ InputManager:
     positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 3
-    dead: .00100000005
+    gravity: 0
+    dead: .189999998
     sensitivity: 1
-    snap: 1
+    snap: 0
     invert: 0
     type: 2
     axis: 0
@@ -317,11 +317,11 @@ InputManager:
     positiveButton: down
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 3
-    dead: .00100000005
+    gravity: 0
+    dead: .189999998
     sensitivity: 1
-    snap: 1
-    invert: 0
+    snap: 0
+    invert: 1
     type: 2
     axis: 1
     joyNum: 2

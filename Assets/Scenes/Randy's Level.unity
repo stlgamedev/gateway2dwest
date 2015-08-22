@@ -3316,6 +3316,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11441298, guid: e85d887f148f59a4db202c50f9246282, type: 2}
+      propertyPath: objectsToFollow.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 402650, guid: e85d887f148f59a4db202c50f9246282, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3.61050224
@@ -3364,6 +3368,18 @@ Prefab:
       propertyPath: inputHelper
       value: 
       objectReference: {fileID: 877397615}
+    - target: {fileID: 175460, guid: e85d887f148f59a4db202c50f9246282, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441298, guid: e85d887f148f59a4db202c50f9246282, type: 2}
+      propertyPath: objectsToFollow.Array.data[0]
+      value: 
+      objectReference: {fileID: 1827585616}
+    - target: {fileID: 11441298, guid: e85d887f148f59a4db202c50f9246282, type: 2}
+      propertyPath: objectsToFollow.Array.data[1]
+      value: 
+      objectReference: {fileID: 704113204}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e85d887f148f59a4db202c50f9246282, type: 2}
   m_IsPrefabParent: 0
@@ -4114,7 +4130,7 @@ Animator:
   m_GameObject: {fileID: 704113203}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 75b0a1651d26645aabcc9e592a9b8218, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2154b51c11bec4bde9b8540ae7db7439, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4197,7 +4213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300002, guid: 60ac68867429446faa6bae09ec1309e8, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 60ac68867429446faa6bae09ec1309e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &705814845
 GameObject:

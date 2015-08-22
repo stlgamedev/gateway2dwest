@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
             //Calculates direction from the object attacking us and pushes us away at a set speed while taking damage.
             //This may be changed later to slower speed when damaged. It hasn't been decided yet.
         }
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000);
     }
 
 	private void UpdateAnimationStates (Vector2 axis)

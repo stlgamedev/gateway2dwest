@@ -306,7 +306,7 @@ InputManager:
     sensitivity: 1
     snap: 1
     invert: 0
-    type: 2
+    type: 0
     axis: 0
     joyNum: 2
   - serializedVersion: 3
@@ -321,8 +321,8 @@ InputManager:
     dead: .00100000005
     sensitivity: 1
     snap: 1
-    invert: 0
-    type: 2
+    invert: 1
+    type: 0
     axis: 1
     joyNum: 2
   - serializedVersion: 3

@@ -171,6 +171,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300104, guid: 60ac68867429446faa6bae09ec1309e8,
         type: 3}
+    - target: {fileID: 11487414, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
+      propertyPath: moneyUIObject
+      value: 
+      objectReference: {fileID: 825614090}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
   m_IsPrefabParent: 0
@@ -2781,6 +2785,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300098, guid: 60ac68867429446faa6bae09ec1309e8,
         type: 3}
+    - target: {fileID: 11487414, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
+      propertyPath: moneyUIObject
+      value: 
+      objectReference: {fileID: 825614090}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6616109ee7e9e467793c5e7456dbb0ee, type: 2}
   m_IsPrefabParent: 0
@@ -15511,7 +15519,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2123518676}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Interactable Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

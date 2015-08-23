@@ -8,7 +8,10 @@ public class PlayerMovement : MonoBehaviour
 	public float movementSpeed = 2.0f;
     public float damagedMovementSpeed = 4f;
 	public InputHelper inputHelper;
-	
+	public float knockbackStunTime = 0.08f;
+
+	private bool disableControls;
+	private Vector2 knockbackDirection;
     
 	Animator animator;
 	Rigidbody2D rb;
@@ -19,8 +22,7 @@ public class PlayerMovement : MonoBehaviour
 	void Start ()
 	{
 		animator = GetComponent<Animator> (); //In unity, GetComponent is implicit to the object the script is attached, thus "this" is not needed
-		rb = GetComponent<Rigidbody2D> (); //Gets attached rigidbody2D component
-        playerStats = GetComponent<PlayerStatus>();
+		rb = GetComponent<Rigidbody2D> (); //Gets attached rigidbody2D component\
 	}
 	
 	// Update is called once per frame
@@ -38,18 +40,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void ApplyMotion(Vector2 moveDirection)
     {
-        if (!playerStats.takingDamage)
+        if (!disableControls)
         {
             rb.velocity = moveDirection * movementSpeed; //Normal Movement
         }
         else
         {
-            rb.velocity = (transform.position - playerStats.attackerPos).normalized * damagedMovementSpeed;
+            rb.velocity = knockbackDirection * damagedMovementSpeed;
             //Calculates direction from the object attacking us and pushes us away at a set speed while taking damage.
             //This may be changed later to slower speed when damaged. It hasn't been decided yet.
         }
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000);
     }
+
+	public virtual void KnockBack(Vector2 direction) {
+		disableControls = true;
+		knockbackDirection = direction;
+		Invoke("ResumeControl", knockbackStunTime); //resets taking damage flag
+	}
+
+	private void ResumeControl() {
+		disableControls = false;
+		knockbackDirection = Vector2.zero;
+	}
 
 	private void UpdateAnimationStates (Vector2 axis)
 	{
@@ -68,8 +81,10 @@ public class PlayerMovement : MonoBehaviour
 
 	private void SetAnimationParameters (float x, float y)
 	{
-		animator.SetFloat ("HorizontalMovement", x);
-		animator.SetFloat ("VerticalMovement", y);
+		if (animator) {
+			animator.SetFloat ("HorizontalMovement", x);
+			animator.SetFloat ("VerticalMovement", y);
+		}
 	}
 
 	private Vector2 EnsurePlayerNeverMovesFasterThanMaxSpeed (Vector2 axis)

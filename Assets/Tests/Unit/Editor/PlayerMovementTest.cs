@@ -11,7 +11,7 @@ namespace UnityTest
 
 	[TestFixture]
 	[Category("Player Movement Test")]
-	internal class PlayerMovementTest
+	internal class PlayerMovementTest 
 	{
 		private UnityScriptTestHelper testHelper = new UnityScriptTestHelper();
 		public MockInputHelper inputHelper;
@@ -42,6 +42,7 @@ namespace UnityTest
 			inputHelper.mockAxisRaw = new Vector2 (1, 0);
 			//Act
 			testHelper.Update(testObject);
+			testHelper.FixedUpdate (testObject);
 
 			//Assert
 			var rb = testObject.GetComponent<Rigidbody2D> ();
@@ -57,6 +58,7 @@ namespace UnityTest
 			inputHelper.mockAxisRaw = new Vector2 (1, 1);
 			//Act
 			testHelper.Update(testObject);
+			testHelper.FixedUpdate(testObject);
 			
 			//Assert
 			Vector2 expectedResult = new Vector2 (1, 1);
@@ -75,6 +77,7 @@ namespace UnityTest
 			inputHelper.mockAxisRaw = new Vector2 (0.5f, 0.5f);
 			//Act
 			testHelper.Update(testObject);
+			testHelper.FixedUpdate (testObject);
 			
 			//Assert
 			Vector2 expectedResult = new Vector2 (0.5f, 0.5f);
@@ -84,5 +87,18 @@ namespace UnityTest
 			Assert.AreEqual (new Vector2(1, 1), rb.velocity);
 		}
 
+		[Test]
+		public void KnockbackDisablesControlsAndMovesPlayerInDirection () {
+			//arrange
+			testObject.damagedMovementSpeed = 5f;
+
+			//act
+			testObject.KnockBack(new Vector2(1,0));
+			testHelper.FixedUpdate (testObject);
+
+			//assert
+			Assert.AreEqual (new Vector2 (5,0), testObject.GetComponent<Rigidbody2D>().velocity);
+
+		}
 	}
 }

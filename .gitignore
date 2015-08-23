@@ -30,3 +30,4 @@ UnityVS
 # Mac OS X Finder
 .DS_Store
 Builds/.htaccess
+ProjectSettings/InputManager.asset

@@ -9,21 +9,18 @@ public class PlayerStatus : MonoBehaviour {
     public float money = 0;
     
     public bool poisioned = false;
-    public bool takingDamage = false;
-    public bool canTakeDamage = true;
 
     public AudioClip damageSound;
 
-    public Text moneyUIObject;
+	public Text moneyUIObject;
 
-    public Vector3 attackerPos;
-
-    Renderer rend;
+	private bool canTakeDamage = true;
+	
+	Renderer rend;
 
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
-        Globals.Players.Add(gameObject);
 	}
 	
 	// Update is called once per frame
@@ -32,7 +29,7 @@ public class PlayerStatus : MonoBehaviour {
 			hitPoints -= Time.deltaTime * 5.0f;
 		}
 
-        if(takingDamage)
+        if(!canTakeDamage)
         {
             rend.material.color = Color.red; //Changes color to red when taking damage
         }
@@ -42,24 +39,16 @@ public class PlayerStatus : MonoBehaviour {
         }
 	}
 
-    public void TakeDamage(CollisionData cd)
+    public virtual void TakeDamage(float damageToDeal)
     {
         if (canTakeDamage)
         {
-            hitPoints -= cd.damageToDeal; //apply damage
-            attackerPos = cd.sender.transform.position; //set the position of the attacker so we can perform knockback
-            takingDamage = true; //sets taking damage flag to true
+            hitPoints -= damageToDeal; //apply damage
             canTakeDamage = false;
-            Invoke("UnlockControls", .08f); //resets taking damage flag
             Invoke("EnableDamage", .35f); //Allows us to take damage again
             Camera.main.GetComponent<CameraFollow>().ShakeCamera(.12f, .2f);
             Camera.main.GetComponent<AudioSource>().PlayOneShot(damageSound);
         }
-    }
-
-    public void UnlockControls()
-    {
-        takingDamage = false;
     }
 
     public void EnableDamage()
@@ -71,5 +60,6 @@ public class PlayerStatus : MonoBehaviour {
     {
         money += moneyToGive;
         moneyUIObject.text = "$" + money.ToString();
+
     }
 }

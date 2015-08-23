@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f46bf9271d56f4c458a84c393eaf2917
-timeCreated: 1439060915
+timeCreated: 1440298625
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,7 @@ TextureImporter:
     21300002: Dirty-Dungeon-Tileset_1
     21300004: Dirty-Dungeon-Tileset_2
     21300006: Dirty-Dungeon-Tileset_3
+    21300008: Dirty-Dungeon-Tileset_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -61,7 +62,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Dirty-Dungeon-Tileset_1
       rect:
@@ -71,7 +72,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Dirty-Dungeon-Tileset_2
       rect:
@@ -81,7 +82,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Dirty-Dungeon-Tileset_3
       rect:
@@ -91,7 +92,17 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dirty-Dungeon-Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

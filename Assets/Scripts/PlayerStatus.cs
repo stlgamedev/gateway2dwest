@@ -4,8 +4,7 @@ using System.Collections;
 
 public class PlayerStatus : MonoBehaviour {
 
-    public int playerID = 0; //Setting foundation for multiple players
-	public float hitPoints = 100;
+    public float hitPoints = 100;
     public float money = 0;
     
     public bool poisioned = false;

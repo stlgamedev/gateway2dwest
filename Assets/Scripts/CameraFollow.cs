@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraFollow : MonoBehaviour {
-    public Transform[] objectsToFollow;
+    public List<Transform> objectsToFollow;
     public BoxCollider2D boundingBox;
 
     bool isShaking = false;
@@ -20,20 +21,20 @@ public class CameraFollow : MonoBehaviour {
                 //Setting up variables for later use.
 
 
-        for(int i = 0; i < objectsToFollow.Length; i++)
+        for(int i = 0; i < objectsToFollow.Count; i++)
         {
             centerPos += objectsToFollow[i].position; //Add to center position for averaging later
-            if(i != objectsToFollow.Length-1)
+            if(i != objectsToFollow.Count-1)
             {
                 distance += Vector3.Distance(objectsToFollow[i].position, objectsToFollow[i + 1].position);
                         //If we aren't the last object, add the distance of this object to the next
             }
         }
 
-        centerPos = (centerPos / objectsToFollow.Length);
+        centerPos = (centerPos / objectsToFollow.Count);
                 //Average the positions of the objects to find the center
 
-        distance = (distance / objectsToFollow.Length);
+        distance = (distance / objectsToFollow.Count);
                 //Averages the distance of all the objects
 
         transform.position = new Vector3(

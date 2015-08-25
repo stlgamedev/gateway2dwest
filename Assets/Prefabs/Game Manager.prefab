@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b1d7119979b4e64a420d818755da92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPlayers: 4
+  numberOfPlayers: 2
   player1Sprite: {fileID: 156178, guid: 6f08ca5b2bcfd496884a603c9c499eb2, type: 2}
   player2Sprite: {fileID: 109330, guid: e3b6c40f1c76f4057a61a3f776d3172e, type: 2}
   player3Sprite: {fileID: 142478, guid: 13d1d94273adc4d2eae3a276f9638719, type: 2}
@@ -67,7 +67,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: numberOfPlayers
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: player1Sprite

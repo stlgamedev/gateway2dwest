@@ -14,7 +14,9 @@ public class MoneyPickup : MonoBehaviour {
     {
         col.transform.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
                 //Send message to whoever picked up the money.
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(pickupSound);
+        
+		SoundManager.instance.PlaySingle (pickupSound);
+
                 //Play sound when picked up.
         Destroy(gameObject);
                 //Destroy self after doing all that.

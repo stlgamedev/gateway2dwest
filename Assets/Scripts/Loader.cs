@@ -5,8 +5,8 @@ namespace Completed
 {	
 	public class Loader : MonoBehaviour 
 	{
-		public GameObject gameManager;			//GameManager prefab to instantiate.
-		
+		public GameManager gameManager;			//GameManager prefab to instantiate.
+		public SoundManager soundManager;
 		
 		void Awake ()
 		{
@@ -14,8 +14,15 @@ namespace Completed
 			if (GameManager.instance == null) {
 				
 				//Instantiate gameManager prefab
-				Instantiate (gameManager);
+				Instantiate (gameManager.gameObject);
 
+			}
+			
+			//Check if a SoundManager has already been assigned to static variable GameManager.instance or if it's still null
+			if (SoundManager.instance == null) {
+				
+				//Instantiate SoundManager prefab
+				Instantiate (soundManager.gameObject);
 			}
 		}
 	}

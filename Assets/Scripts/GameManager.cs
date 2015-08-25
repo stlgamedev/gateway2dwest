@@ -39,22 +39,24 @@ namespace Completed
 
 			List<GameObject> players = new List<GameObject> ();
 
-			players.Add(player1Sprite);
-			players.Add(player2Sprite);
-			players.Add(player3Sprite);
-			players.Add(player4Sprite);
+			players.Add(Instantiate(player1Sprite));
+			players.Add(Instantiate(player2Sprite));
+			players.Add(Instantiate(player3Sprite));
+			players.Add(Instantiate(player4Sprite));
+
+			var canvas = FindObjectOfType<Canvas> ();
 
 			List<Transform> objectsToFollow = new List<Transform> ();
-			objectsToFollow.Add (players [0].transform);
-			objectsToFollow.Add (players [1].transform);
-			objectsToFollow.Add (players [2].transform);
-			objectsToFollow.Add (players [3].transform);
-
-			var playersToRemove = new List<GameObject> ();
-			for (int i = 3; i >= numberOfPlayers; i--) {
-				playersToRemove.Add(players[i]);
+			foreach (GameObject player in players) {
+				objectsToFollow.Add(player.transform);
+				var status = player.GetComponent<PlayerStatus>();
+				var moneyUI = canvas.GetComponentInChildren<Text>();
+				status.moneyUIObject = moneyUI;
+				player.transform.parent = transform;
 			}
-			foreach(GameObject player in playersToRemove) {
+
+			for (int i = 3; i >= numberOfPlayers; i--) {
+				var player = players[i];
 				objectsToFollow.Remove(player.transform);
 				players.Remove(player);
 				Destroy(player);

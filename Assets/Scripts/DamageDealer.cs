@@ -28,8 +28,9 @@ public class DamageDealer : MonoBehaviour {
 	private void handleCollision (Collider2D col)
 	{
 		col.GetComponent<PlayerStatus> ().TakeDamage (damageToDeal);
-		var knockbackAngle = -(transform.position - col.gameObject.transform.position).normalized;
-		knockbackAngle.Normalize ();
-		col.GetComponent<PlayerMovement> ().KnockBack (knockbackAngle);
+		var knockbackAngle = -(transform.position - col.gameObject.transform.position);
+		var knockbackAngle2D = new Vector2 (knockbackAngle.x, knockbackAngle.y);
+		knockbackAngle2D.Normalize ();
+		col.GetComponent<PlayerMovement> ().KnockBack (knockbackAngle2D);
 	}
 }

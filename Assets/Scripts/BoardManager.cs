@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 //Allows us to use Lists.
 using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine random number generator.
+using UnityEditor;
 
 	
 public class BoardManager : MonoBehaviour
@@ -54,14 +55,20 @@ public class BoardManager : MonoBehaviour
 			}
 		}
 	}
-		
-		
+
 	//Sets up the outer walls and floor (background) of the game board.
 	void BoardSetup ()
 	{
 		//Instantiate Board and set boardHolder to its transform.
 		boardHolder = new GameObject ("Board").transform;
-			
+
+		var variableForPrefab = (GameObject)Resources.Load("LevelComponents/SampleField", typeof(GameObject));
+
+		var instance = Instantiate(variableForPrefab,
+		                            new Vector3(-0.5f, 0.33f, 0.0f),
+		                            Quaternion.identity) as GameObject;
+		instance.transform.localScale = Vector3.one;
+		instance.transform.SetParent(this.transform);
 		//Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
 //			for(int x = -1; x < columns + 1; x++)
 //			{

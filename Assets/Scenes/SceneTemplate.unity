@@ -246,7 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22fe402a87d3fb458e22a59ce15336e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToFollow: []
+  objectsToFollow:
+  - {fileID: 0}
   boundingBox: {fileID: 6185970, guid: 22a52d2c38debe54dbf90f74c336009e, type: 2}
 --- !u!1001 &1223830588
 Prefab:

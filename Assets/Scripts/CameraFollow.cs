@@ -38,8 +38,7 @@ public class CameraFollow : MonoBehaviour {
                 //Averages the distance of all the objects
 
         transform.position = new Vector3(
-                                    Mathf.Clamp(centerPos.x, boundingBox.bounds.min.x, boundingBox.bounds.max.x),
-                                    Mathf.Clamp(centerPos.y, boundingBox.bounds.min.y, boundingBox.bounds.max.y),
+                                    centerPos.x, centerPos.y,
                                     - 10);
                 //Sets the position to center of all objects, then clamps it to fit inside the camera bounds object
 

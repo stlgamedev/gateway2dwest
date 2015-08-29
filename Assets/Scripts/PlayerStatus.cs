@@ -11,8 +11,6 @@ public class PlayerStatus : MonoBehaviour {
 
     public AudioClip damageSound;
 
-	public Text moneyUIObject;
-
 	private bool canTakeDamage = true;
 	
 	Renderer rend;
@@ -58,7 +56,6 @@ public class PlayerStatus : MonoBehaviour {
     public void GiveMoney(float moneyToGive)
     {
         money += moneyToGive;
-        moneyUIObject.text = "$" + money.ToString();
-
+		GameManager.instance.GuiHandler.UpdateMoney (money);
     }
 }

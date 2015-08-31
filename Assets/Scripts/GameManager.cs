@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		CameraFollow camera = (CameraFollow)FindObjectOfType (typeof(CameraFollow));
-		camera.objectsToFollow = objectsToFollow;
+		camera.objectsToFollow = (Transform[])objectsToFollow.ToArray();
 
 		//Sets this to not be destroyed when reloading scene
 		DontDestroyOnLoad (gameObject);

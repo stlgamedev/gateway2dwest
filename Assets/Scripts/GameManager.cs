@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 	public GameObject player2Sprite;
 	public GameObject player3Sprite;
 	public GameObject player4Sprite;
+    public List<GameObject> players = new List<GameObject>();
 	private BoardManager boardScript;
 	private GuiHandler guiHandler;
 	private int level = 1;									//Current level number, expressed in game as "Day 1".
@@ -29,16 +30,17 @@ public class GameManager : MonoBehaviour
 		if (instance == null) {
 				
 			//if not, set instance to this
-			instance = this;
+            instance = gameObject.GetComponent<GameManager>();
 		}
 			//If instance already exists and it's not this:
-			else if (instance != this) {
+        else if (instance != gameObject.GetComponent<GameManager>())
+        {
 				
 			//Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
 			Destroy (gameObject);	
 		}
 
-		List<GameObject> players = new List<GameObject> ();
+		
 
 		players.Add (Instantiate (player1Sprite));
 		players.Add (Instantiate (player2Sprite));

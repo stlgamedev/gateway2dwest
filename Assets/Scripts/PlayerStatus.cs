@@ -4,15 +4,12 @@ using System.Collections;
 
 public class PlayerStatus : MonoBehaviour {
 
-    public int playerID = 0; //Setting foundation for multiple players
-	public float hitPoints = 100;
+    public float hitPoints = 100;
     public float money = 0;
     
     public bool poisioned = false;
 
     public AudioClip damageSound;
-
-	public Text moneyUIObject;
 
 	private bool canTakeDamage = true;
 	
@@ -47,7 +44,7 @@ public class PlayerStatus : MonoBehaviour {
             canTakeDamage = false;
             Invoke("EnableDamage", .35f); //Allows us to take damage again
             Camera.main.GetComponent<CameraFollow>().ShakeCamera(.12f, .2f);
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(damageSound);
+            SoundManager.instance.PlaySingle(damageSound);
         }
     }
 
@@ -59,7 +56,6 @@ public class PlayerStatus : MonoBehaviour {
     public void GiveMoney(float moneyToGive)
     {
         money += moneyToGive;
-        moneyUIObject.text = "$" + money.ToString();
-
+		GameManager.instance.GuiHandler.UpdateMoney (money);
     }
 }

@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraFollow : MonoBehaviour {
-    public Transform[] objectsToFollow;
+    public List<Transform> objectsToFollow;
     public BoxCollider2D boundingBox;
 
     bool isShaking = false;
     float shakeStrength = .5f;
+	// Use this for initialization
+	void Start () {
+	
+	}
 	
 	// Update is called once per frame
 	void Update () 
@@ -15,36 +20,22 @@ public class CameraFollow : MonoBehaviour {
         float distance = 0;
                 //Setting up variables for later use.
 
-        Vector2 minPos = objectsToFollow[0].position;
-        Vector2 maxPos = objectsToFollow[0].position;
-                //If we set it to 0 and the level starts at 0, then the minimum position is always 0.
-                //Setting it to the first object to follow means that there will never be this minimum issue.
 
-        //Checks all objects to follow for the maximum and minimum values to calculate camera position and distance.
-        for(int i = 0; i < objectsToFollow.Length; i++)
+        for(int i = 0; i < objectsToFollow.Count; i++)
         {
-            if(objectsToFollow[i].position.x < minPos.x)
+            centerPos += objectsToFollow[i].position; //Add to center position for averaging later
+            if(i != objectsToFollow.Count-1)
             {
-                minPos.x = objectsToFollow[i].position.x;
-            }
-            if (objectsToFollow[i].position.y < minPos.y)
-            {
-                minPos.y = objectsToFollow[i].position.y;
-            }
-            if (objectsToFollow[i].position.x > maxPos.x)
-            {
-                maxPos.x = objectsToFollow[i].position.x;
-            }
-            if (objectsToFollow[i].position.y > maxPos.y)
-            {
-                maxPos.y = objectsToFollow[i].position.y;
+                distance += Vector3.Distance(objectsToFollow[i].position, objectsToFollow[i + 1].position);
+                        //If we aren't the last object, add the distance of this object to the next
             }
         }
-        distance = Vector2.Distance(minPos, maxPos);
-        //calculate the distance between the minimum and maximum positions to calculate zoom.
 
-        centerPos = (minPos + maxPos) / 2;
-                //Average the positions of the min/max to find the center of all players
+        centerPos = (centerPos / objectsToFollow.Count);
+                //Average the positions of the objects to find the center
+
+        distance = (distance / objectsToFollow.Count);
+                //Averages the distance of all the objects
 
         transform.position = new Vector3(
                                     Mathf.Clamp(centerPos.x, boundingBox.bounds.min.x, boundingBox.bounds.max.x),
@@ -52,11 +43,14 @@ public class CameraFollow : MonoBehaviour {
                                     - 10);
                 //Sets the position to center of all objects, then clamps it to fit inside the camera bounds object
 
-            GetComponent<Camera>().orthographicSize = Mathf.Max(5f, (distance*.5f)+1);
-                    //Changes the orthographic view to the minimum of 5, but will zoom to fit all players
-                    //Since we are centered, we use half the distance, and add 1 to allow for the height/width of player images
 
-        CheckShake(); //Check to see if we should apply the camera shake.
+        if (distance > 5)
+        {
+            GetComponent<Camera>().orthographicSize = 6 + (distance - 5);
+                    //Only changes the orthographic view if the distance average is greater then 5 units apart.
+        }
+        CheckShake();
+        //Clamps the camera transform position to the bounds of the CameraBounds object in the scene.
 	}
 
     void CheckShake()
@@ -64,7 +58,6 @@ public class CameraFollow : MonoBehaviour {
         if(isShaking)
         {
             transform.position += new Vector3(Random.Range(-shakeStrength,shakeStrength),Random.Range(-shakeStrength,shakeStrength),0);
-                //Offsets the camera by a random value with the force of shakeStrength
         }
     }
 

@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11439552}
   - 95: {fileID: 9513062}
   - 50: {fileID: 5062584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player 1 Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,6 @@ MonoBehaviour:
   money: 0
   poisioned: 0
   damageSound: {fileID: 8300000, guid: 94f2d903738a08e4abaf7a67b66c8add, type: 3}
-  moneyUIObject: {fileID: 0}
 --- !u!212 &21290324
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,6 +153,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

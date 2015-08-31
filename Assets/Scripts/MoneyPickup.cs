@@ -12,13 +12,16 @@ public class MoneyPickup : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        col.transform.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
-                //Send message to whoever picked up the money.
-        
-		SoundManager.instance.PlaySingle (pickupSound);
+        if (LayerMask.LayerToName(col.gameObject.layer) == "Player")
+        {
+            col.transform.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
+            //Send message to whoever picked up the money.
 
-                //Play sound when picked up.
-        Destroy(gameObject);
-                //Destroy self after doing all that.
+            SoundManager.instance.PlaySingle(pickupSound);
+
+            //Play sound when picked up.
+            Destroy(gameObject);
+            //Destroy self after doing all that.
+        }
     }
 }

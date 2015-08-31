@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     
 	Animator animator;
 	Rigidbody2D rb;
-    PlayerStatus playerStats;
+    Status playerStats;
     Vector2 axis;
 
 	// Use this for initialization

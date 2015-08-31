@@ -123,7 +123,7 @@ namespace UnityTest
 		}
 
 
-		public class PlayerStatusStub:PlayerStatus
+		public class PlayerStatusStub:Status
 		{
 			public float DamageDelt { get; private set;}
 

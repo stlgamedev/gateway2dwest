@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerStatus : MonoBehaviour {
+public class Status : MonoBehaviour {
 
     public float hitPoints = 100;
     public float money = 0;

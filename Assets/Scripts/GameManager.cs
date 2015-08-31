@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 		List<Transform> objectsToFollow = new List<Transform> ();
 		foreach (GameObject player in players) {
 			objectsToFollow.Add (player.transform);
-			var status = player.GetComponent<PlayerStatus> ();
+			var status = player.GetComponent<Status> ();
 			var guiHandler = canvas.GetComponentInChildren<GuiHandler> ();
 			this.guiHandler = guiHandler;
 			player.transform.parent = transform;

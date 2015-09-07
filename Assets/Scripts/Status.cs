@@ -3,9 +3,10 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Status : MonoBehaviour {
-
+    public int playerID = -1;
     public float hitPoints = 100;
     public float money = 0;
+    public Text moneyText;
     
     public bool poisioned = false;
 
@@ -18,6 +19,11 @@ public class Status : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
+        if (playerID >= 0)
+        {
+            moneyText = GameObject.Find("Player " + (playerID + 1) + " GUI").transform.FindChild("Money").GetComponent<Text>();
+        }
+        //This works... but is really really clunky and I don't like it. Need to find a better way. Maybe an array on gamemanager?
 	}
 	
 	// Update is called once per frame
@@ -56,6 +62,6 @@ public class Status : MonoBehaviour {
     public void GiveMoney(float moneyToGive)
     {
         money += moneyToGive;
-		GameManager.instance.GuiHandler.UpdateMoney (money);
+		moneyText.text = "$" + money;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform[] objectsToFollow;
+    public Transform[] objectsToFollow = new Transform[4];
     public BoxCollider2D boundingBox;
 
     bool isShaking = false;

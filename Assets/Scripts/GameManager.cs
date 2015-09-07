@@ -8,24 +8,23 @@ using UnityEngine.UI;					//Allows us to use UI.
 	
 public class GameManager : MonoBehaviour
 {
+    [Range(1,4)]
 	public int numberOfPlayers = 4;
 	public static GameManager instance = null;				//Static instance of GameManager which allows it to be accessed by any other script.
 
-	public GameObject player1Sprite;
-	public GameObject player2Sprite;
-	public GameObject player3Sprite;
-	public GameObject player4Sprite;
-    public List<GameObject> players = new List<GameObject>();
+    public GameObject[] playerSprites = new GameObject[4];
+    [HideInInspector]
+    public GameObject[] players = new GameObject[4];
 	private BoardManager boardScript;
-	private GuiHandler guiHandler;
 	private int level = 1;									//Current level number, expressed in game as "Day 1".
 	private bool doingSetup = true;							//Boolean to check if we're setting up board, prevent Player from moving during setup.
-
-	public GuiHandler GuiHandler { get { return guiHandler; } }
 
 	//Awake is always called before any Start functions
 	void Awake ()
 	{
+        //Sets this to not be destroyed when reloading scene
+        DontDestroyOnLoad (gameObject);
+
 		//Check if instance already exists
 		if (instance == null) {
 				
@@ -40,36 +39,25 @@ public class GameManager : MonoBehaviour
 			Destroy (gameObject);	
 		}
 
-		
+        Transform[] objectsToFollow = new Transform[4];
 
-		players.Add (Instantiate (player1Sprite));
-		players.Add (Instantiate (player2Sprite));
-		players.Add (Instantiate (player3Sprite));
-		players.Add (Instantiate (player4Sprite));
+        //Simplified player sprites into an array rather then 4 independent variables.
+        //This should make iteration easier.
+        for (int i = 0; i < numberOfPlayers; i++)
+        {
+            //only adds the player if the player has been set. Should allow for
+            if (playerSprites[i] != null)
+            {
+                players[i] = Instantiate(playerSprites[i]);
+                objectsToFollow[i] = players[i].transform;
+                players[i].transform.parent = transform;
+                players[i].GetComponent<Status>().playerID = i;
+            }
+        }
 
-		var canvas = FindObjectOfType<Canvas> ();
-
-		List<Transform> objectsToFollow = new List<Transform> ();
-		foreach (GameObject player in players) {
-			objectsToFollow.Add (player.transform);
-			var status = player.GetComponent<Status> ();
-			var guiHandler = canvas.GetComponentInChildren<GuiHandler> ();
-			this.guiHandler = guiHandler;
-			player.transform.parent = transform;
-		}
-
-		for (int i = 3; i >= numberOfPlayers; i--) {
-			var player = players [i];
-			objectsToFollow.Remove (player.transform);
-			players.Remove (player);
-			Destroy (player);
-		}
-
-		CameraFollow camera = (CameraFollow)FindObjectOfType (typeof(CameraFollow));
-		camera.objectsToFollow = (Transform[])objectsToFollow.ToArray();
-
-		//Sets this to not be destroyed when reloading scene
-		DontDestroyOnLoad (gameObject);
+        CameraFollow camera = Camera.main.GetComponent<CameraFollow>();
+		camera.objectsToFollow = objectsToFollow;
+	
 
 		//Get a component reference to the attached BoardManager script
 		boardScript = GetComponent<BoardManager> ();
@@ -106,6 +94,5 @@ public class GameManager : MonoBehaviour
 			return;
 
 	}
-
 }
 

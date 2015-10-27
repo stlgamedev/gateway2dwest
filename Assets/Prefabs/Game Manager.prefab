@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c873c963a24ea415ea51468f2566c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 8
-  rows: 8
+  horizontalRoomCount: 3
+  verticalRoomCount: 5
 --- !u!114 &11455832
 MonoBehaviour:
   m_ObjectHideFlags: 1

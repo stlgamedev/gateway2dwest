@@ -9,21 +9,16 @@ public class PlayerMovement : MonoBehaviour
     public float damagedMovementSpeed = 4f;
 	public InputHelper inputHelper;
 	public float knockbackStunTime = 0.08f;
+    public GameObject weapon;
+    public AudioClip attackSound;
 
-	private bool disableControls;
+    private bool disableControls;
 	private Vector2 knockbackDirection;
     
 	Animator animator;
 	Rigidbody2D rb;
     Status playerStats;
     Vector2 axis;
-
-    //variables for attacking stuff
-    public BoxCollider2D hitbox;
-    public Rect attackLeft;
-    public Rect attackRight;
-    public Rect attackUp;
-    public Rect attackDown;
 	
 	void Start ()
 	{
@@ -49,9 +44,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (inputHelper.GetAttackDown())
         {
-            
-            FreezeControl();
-            Invoke("ResumeControl", .5f);
+            weapon.GetComponent<Animator>().SetBool("isAttacking", true);
+            SoundManager.instance.PlaySingle(attackSound);
         }
     }
 
@@ -82,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 	public void ResumeControl() {
+        weapon.GetComponent<Animator>().SetBool("isAttacking", false);
 		disableControls = false;
 		knockbackDirection = Vector2.zero;
 	}
@@ -90,9 +85,25 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (Mathf.Abs (axis.x) > Mathf.Abs (axis.y)) {
 			SetAnimationParameters (axis.x, 0.0f);
+            if(axis.x < 0)
+            {
+                weapon.transform.eulerAngles = new Vector3(0, 0, -90);
+            }
+            else
+            {
+                weapon.transform.eulerAngles = new Vector3(0, 0, 90);
+            }
 			//Sets up walking left/right animation
 		} else if (Mathf.Abs (axis.x) < Mathf.Abs (axis.y)) {
 			SetAnimationParameters (0.0f, axis.y);
+            if(axis.y < 0)
+            {
+                weapon.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else
+            {
+                weapon.transform.eulerAngles = new Vector3(0, 0, 180);
+            }
 			//Sets up walking up/down animation
 		} else if (axis == Vector2.zero) {
 			//Checking if it's equal to zero will allow animations when sliding against walls to still work
@@ -116,14 +127,4 @@ public class PlayerMovement : MonoBehaviour
 		}
 		return axis;
 	}
-
-    //Draw Hitboxes for attacking. Will only show in editor.
-    void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(255, 0, 0, .25f);
-        Gizmos.DrawCube(new Vector3(attackLeft.center.x + transform.position.x, attackLeft.center.y + transform.position.y, 0), attackLeft.size);
-        Gizmos.DrawCube(new Vector3(attackRight.center.x + transform.position.x, attackRight.center.y + transform.position.y, 0), attackRight.size);
-        Gizmos.DrawCube(new Vector3(attackUp.center.x + transform.position.x, attackUp.center.y + transform.position.y, 0), attackUp.size);
-        Gizmos.DrawCube(new Vector3(attackDown.center.x + transform.position.x, attackDown.center.y + transform.position.y, 0), attackDown.size);
-    }
 }

@@ -32,8 +32,9 @@ public class DamageDealer : MonoBehaviour {
         //it's a comparison to check if the collider layermask is inside the bitwise mask
         //of the layer mask objectstodealdamage. Slightly over my head actually. This was
         //needed so we can check friend or foe before dealing damage. --Randy
-        int layerValue = (1 << col.gameObject.layer);
-        if ((objectsToDealDamage.value & layerValue) > 0)
+        //int layerValue = (1 << col.gameObject.layer);
+        //if ((objectsToDealDamage.value & layerValue) > 0)
+        if ((objectsToDealDamage.value & 1 << col.gameObject.layer) == 1 << col.gameObject.layer)
         {
             col.SendMessage("TakeDamage", damageToDeal, SendMessageOptions.DontRequireReceiver);
             //Set these back to send messages because it was throwing errors trying to call
@@ -48,4 +49,9 @@ public class DamageDealer : MonoBehaviour {
             col.SendMessage("KnockBack", knockbackAngle2D, SendMessageOptions.DontRequireReceiver);
         }
 	}
+    
+    public void StopAttacking()
+    {
+        SendMessageUpwards("ResumeControl", SendMessageOptions.DontRequireReceiver);
+    }
 }

@@ -27,7 +27,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Sphere Fall Apart
+  m_Name: Die
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -80,7 +80,7 @@ AnimatorStateMachine:
     m_Position: {x: 360, y: 12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110244806}
-    m_Position: {x: 395, y: 77, z: 0}
+    m_Position: {x: 396, y: 72, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

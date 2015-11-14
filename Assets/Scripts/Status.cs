@@ -49,16 +49,22 @@ public class Status : MonoBehaviour {
     {
         if (canTakeDamage)
         {
+            Debug.Log(gameObject.name + " is taking damage.");
             hitPoints -= damageToDeal; //apply damage
             hitPoints = Mathf.Clamp(hitPoints, 0, maxHitPoints);
-            UpdateHearts();
+            if (GUI != null)
+            {
+                //only check if it has a gui element. Maybe add healthbars to enemies?
+                UpdateHearts(); 
+            }
             canTakeDamage = false;
             Invoke("EnableDamage", .35f); //Allows us to take damage again
             Camera.main.GetComponent<CameraFollow>().ShakeCamera(.12f, .2f);
             SoundManager.instance.PlaySingle(damageSound);
-            if(hitPoints <= 0)
+            if(hitPoints == 0)
             {
-                BroadcastMessage("Die", SendMessageOptions.DontRequireReceiver);
+                Die();
+                hitPoints = -1;
             }
         }
     }
@@ -87,5 +93,21 @@ public class Status : MonoBehaviour {
     {
         money += moneyToGive;
 		moneyText.text = "$" + money;
+    }
+
+    public void Die()
+    {
+        Collider[] cols = GetComponents<Collider>();
+        for(int i = 0; i < cols.Length; i++)
+        {
+            Destroy(cols[i]);
+        }
+        foreach (Transform t in transform)
+        {
+            if (t != transform)
+            {
+                t.SendMessage("Die", SendMessageOptions.DontRequireReceiver);
+            }
+        }
     }
 }

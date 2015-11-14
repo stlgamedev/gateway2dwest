@@ -12,52 +12,73 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 centerPos = Vector3.zero;
-        float distance = 0;
-        //Setting up variables for later use.
-
-        Vector2 minPos = objectsToFollow[0].position;
-        Vector2 maxPos = objectsToFollow[0].position;
-        //If we set it to 0 and the level starts at 0, then the minimum position is always 0.
-        //Setting it to the first object to follow means that there will never be this minimum issue.
-
-        //Checks all objects to follow for the maximum and minimum values to calculate camera position and distance.
-        for (int i = 0; i < objectsToFollow.Length; i++)
+        if (objectsToFollow[0] != null)
         {
-            if (objectsToFollow[i].position.x < minPos.x)
+            Vector3 centerPos = Vector3.zero;
+            float distance = 0;
+            //Setting up variables for later use.
+
+            Vector2 minPos = objectsToFollow[0].position;
+            Vector2 maxPos = objectsToFollow[0].position;
+            //If we set it to 0 and the level starts at 0, then the minimum position is always 0.
+            //Setting it to the first object to follow means that there will never be this minimum issue.
+
+            //Checks all objects to follow for the maximum and minimum values to calculate camera position and distance.
+            for (int i = 0; i < objectsToFollow.Length; i++)
             {
-                minPos.x = objectsToFollow[i].position.x;
+                if (objectsToFollow[i] != null)
+                {
+                    if (objectsToFollow[i].position.x < minPos.x)
+                    {
+                        minPos.x = objectsToFollow[i].position.x;
+                    }
+                    if (objectsToFollow[i].position.y < minPos.y)
+                    {
+                        minPos.y = objectsToFollow[i].position.y;
+                    }
+                    if (objectsToFollow[i].position.x > maxPos.x)
+                    {
+                        maxPos.x = objectsToFollow[i].position.x;
+                    }
+                    if (objectsToFollow[i].position.y > maxPos.y)
+                    {
+                        maxPos.y = objectsToFollow[i].position.y;
+                    }
+                }
             }
-            if (objectsToFollow[i].position.y < minPos.y)
+            distance = Vector2.Distance(minPos, maxPos);
+            //calculate the distance between the minimum and maximum positions to calculate zoom.
+
+            centerPos = (minPos + maxPos) / 2;
+            //Average the positions of the min/max to find the center of all players
+
+            transform.position = new Vector3(
+                                        Mathf.Clamp(centerPos.x, boundingBox.bounds.min.x, boundingBox.bounds.max.x),
+                                        Mathf.Clamp(centerPos.y, boundingBox.bounds.min.y, boundingBox.bounds.max.y),
+                                        -10);
+            //Sets the position to center of all objects, then clamps it to fit inside the camera bounds object
+
+            GetComponent<Camera>().orthographicSize = Mathf.Max(5f, (distance * .5f) + 1);
+            //Changes the orthographic view to the minimum of 5, but will zoom to fit all players
+            //Since we are centered, we use half the distance, and add 1 to allow for the height/width of player images
+
+            CheckShake(); //Check to see if we should apply the camera shake.
+        }
+        else
+        {
+            if(GameManager.instance != null)
             {
-                minPos.y = objectsToFollow[i].position.y;
-            }
-            if (objectsToFollow[i].position.x > maxPos.x)
-            {
-                maxPos.x = objectsToFollow[i].position.x;
-            }
-            if (objectsToFollow[i].position.y > maxPos.y)
-            {
-                maxPos.y = objectsToFollow[i].position.y;
+                int i = 0;
+                foreach (GameObject playerObject in GameManager.instance.players)
+                {
+                    if (playerObject != null)
+                    {
+                        objectsToFollow[i] = playerObject.transform;
+                    }
+                    i++;
+                }
             }
         }
-        distance = Vector2.Distance(minPos, maxPos);
-        //calculate the distance between the minimum and maximum positions to calculate zoom.
-
-        centerPos = (minPos + maxPos) / 2;
-        //Average the positions of the min/max to find the center of all players
-
-        transform.position = new Vector3(
-                                    Mathf.Clamp(centerPos.x, boundingBox.bounds.min.x, boundingBox.bounds.max.x),
-                                    Mathf.Clamp(centerPos.y, boundingBox.bounds.min.y, boundingBox.bounds.max.y),
-                                    -10);
-        //Sets the position to center of all objects, then clamps it to fit inside the camera bounds object
-
-        GetComponent<Camera>().orthographicSize = Mathf.Max(5f, (distance * .5f) + 1);
-        //Changes the orthographic view to the minimum of 5, but will zoom to fit all players
-        //Since we are centered, we use half the distance, and add 1 to allow for the height/width of player images
-
-        CheckShake(); //Check to see if we should apply the camera shake.
     }
 
     void CheckShake()

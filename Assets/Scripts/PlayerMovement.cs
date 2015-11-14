@@ -18,7 +18,13 @@ public class PlayerMovement : MonoBehaviour
     Status playerStats;
     Vector2 axis;
 
-	// Use this for initialization
+    //variables for attacking stuff
+    public BoxCollider2D hitbox;
+    public Rect attackLeft;
+    public Rect attackRight;
+    public Rect attackUp;
+    public Rect attackDown;
+	
 	void Start ()
 	{
 		animator = GetComponent<Animator> (); //In unity, GetComponent is implicit to the object the script is attached, thus "this" is not needed
@@ -30,12 +36,23 @@ public class PlayerMovement : MonoBehaviour
 	{
 		axis = inputHelper.axisRaw ();			//Get's input from helper class. This allows for unit testing as well as changing input while inside of the game.
 		axis = EnsurePlayerNeverMovesFasterThanMaxSpeed (axis);
-		UpdateAnimationStates (axis);
+		UpdateAnimationStates(axis);
+        CheckAttack();
 	}
 
     void FixedUpdate()
     {
         ApplyMotion(axis);//Moved into Fixed Update since it's a physics update. This should help fix bugs with getting caught between colliders and such.
+    }
+
+    void CheckAttack()
+    {
+        if (inputHelper.GetAttackDown())
+        {
+            
+            FreezeControl();
+            Invoke("ResumeControl", .5f);
+        }
     }
 
     private void ApplyMotion(Vector2 moveDirection)
@@ -59,7 +76,12 @@ public class PlayerMovement : MonoBehaviour
 		Invoke("ResumeControl", knockbackStunTime); //resets taking damage flag
 	}
 
-	private void ResumeControl() {
+    public void FreezeControl()
+    {
+        disableControls = true;
+    }
+
+	public void ResumeControl() {
 		disableControls = false;
 		knockbackDirection = Vector2.zero;
 	}
@@ -94,4 +116,14 @@ public class PlayerMovement : MonoBehaviour
 		}
 		return axis;
 	}
+
+    //Draw Hitboxes for attacking. Will only show in editor.
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(255, 0, 0, .25f);
+        Gizmos.DrawCube(new Vector3(attackLeft.center.x + transform.position.x, attackLeft.center.y + transform.position.y, 0), attackLeft.size);
+        Gizmos.DrawCube(new Vector3(attackRight.center.x + transform.position.x, attackRight.center.y + transform.position.y, 0), attackRight.size);
+        Gizmos.DrawCube(new Vector3(attackUp.center.x + transform.position.x, attackUp.center.y + transform.position.y, 0), attackUp.size);
+        Gizmos.DrawCube(new Vector3(attackDown.center.x + transform.position.x, attackDown.center.y + transform.position.y, 0), attackDown.size);
+    }
 }

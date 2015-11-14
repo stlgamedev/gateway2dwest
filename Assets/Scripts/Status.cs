@@ -4,9 +4,11 @@ using System.Collections;
 
 public class Status : MonoBehaviour {
     public int playerID = -1;
-    public float hitPoints = 100;
+    public float hitPoints = 3;
+    public float maxHitPoints = 3;
     public float money = 0;
     public Text moneyText;
+    public GameObject GUI;
     
     public bool poisioned = false;
 
@@ -19,15 +21,16 @@ public class Status : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
-        if (playerID >= 0)
-        {
-            moneyText = GameObject.Find("Player " + (playerID + 1) + " GUI").transform.FindChild("Money").GetComponent<Text>();
-        }
-        //This works... but is really really clunky and I don't like it. Need to find a better way. Maybe an array on gamemanager?
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if(moneyText == null && playerID >= 0 && GUI != null)
+        {
+            moneyText = GUI.transform.FindChild("Money").GetComponent<Text>();
+            UpdateHearts();
+        }
+
 		if (poisioned) {
 			hitPoints -= Time.deltaTime * 5.0f;
 		}
@@ -42,15 +45,36 @@ public class Status : MonoBehaviour {
         }
 	}
 
-    public virtual void TakeDamage(float damageToDeal)
+    public virtual void TakeDamage(float damageToDeal)// creates imposter to not throw errors.
     {
         if (canTakeDamage)
         {
             hitPoints -= damageToDeal; //apply damage
+            hitPoints = Mathf.Clamp(hitPoints, 0, maxHitPoints);
+            UpdateHearts();
             canTakeDamage = false;
             Invoke("EnableDamage", .35f); //Allows us to take damage again
             Camera.main.GetComponent<CameraFollow>().ShakeCamera(.12f, .2f);
             SoundManager.instance.PlaySingle(damageSound);
+            if(hitPoints <= 0)
+            {
+                BroadcastMessage("Die", SendMessageOptions.DontRequireReceiver);
+            }
+        }
+    }
+
+    public void UpdateHearts()
+    {
+        for (int i = 1; i <= maxHitPoints; i++)
+        {
+            if (i > hitPoints)
+            {
+                GUI.transform.FindChild("Heart " + i).gameObject.SetActive(false);
+            }
+            else
+            {
+                GUI.transform.FindChild("Heart " + i).gameObject.SetActive(true);
+            }
         }
     }
 

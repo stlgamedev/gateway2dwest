@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance = null;				//Static instance of GameManager which allows it to be accessed by any other script.
 
     public GameObject[] playerSprites = new GameObject[4];
+    public GameObject[] playerGui = new GameObject[4];
     [HideInInspector]
     public GameObject[] players = new GameObject[4];
 	private BoardManager boardScript;
@@ -46,12 +47,13 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < numberOfPlayers; i++)
         {
             //only adds the player if the player has been set. Should allow for
-            if (playerSprites[i] != null)
+            if (playerSprites != null && playerSprites.Length > 0 && playerSprites[i] != null)
             {
                 players[i] = Instantiate(playerSprites[i]);
                 objectsToFollow[i] = players[i].transform;
                 players[i].transform.parent = transform;
                 players[i].GetComponent<Status>().playerID = i;
+                players[i].GetComponent<Status>().GUI = playerGui[i];
             }
         }
 

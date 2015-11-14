@@ -90,8 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9b772ca8f8343708a9391d2f7151d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 4
   hitPoints: 100
   money: 0
+  moneyText: {fileID: 0}
   poisioned: 0
   damageSound: {fileID: 8300000, guid: 94f2d903738a08e4abaf7a67b66c8add, type: 3}
 --- !u!114 &11435576
@@ -157,6 +159,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playerID
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

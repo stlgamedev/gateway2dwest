@@ -157,31 +157,7 @@ MonoBehaviour:
   inputHelper: {fileID: 11442158, guid: 325d45982dd2843b68603bfd5b8cea79, type: 2}
   knockbackStunTime: .0799999982
   weapon: {fileID: 165166}
-  hitbox: {fileID: 0}
-  attackLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  attackRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  attackUp:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  attackDown:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+  attackSound: {fileID: 8300000, guid: 41584e6b6f1da0347828039111b52f93, type: 3}
 --- !u!114 &11443966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,6 +291,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 41584e6b6f1da0347828039111b52f93, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156178}

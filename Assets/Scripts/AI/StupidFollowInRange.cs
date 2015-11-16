@@ -31,11 +31,14 @@ public class StupidFollowInRange : MonoBehaviour
                 rb.velocity = rb.velocity * .98f;
                 foreach (GameObject player in GameManager.instance.players)
                 {
-                    if (Vector2.Distance(player.transform.position, transform.position) <= range)
+                    if (player != null)
                     {
-                        isFollowing = true;
-                        followingObject = player;
-                        break;
+                        if (Vector2.Distance(player.transform.position, transform.position) <= range)
+                        {
+                            isFollowing = true;
+                            followingObject = player;
+                            break;
+                        }
                     }
                 }
             }

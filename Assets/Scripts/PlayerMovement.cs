@@ -83,15 +83,20 @@ public class PlayerMovement : MonoBehaviour
 
 	private void UpdateAnimationStates (Vector2 axis)
 	{
-		if (Mathf.Abs (axis.x) > Mathf.Abs (axis.y)) {
+        Vector2 boxOffset = weapon.GetComponent<BoxCollider2D>().offset;
+        if (Mathf.Abs (axis.x) > Mathf.Abs (axis.y)) {
 			SetAnimationParameters (axis.x, 0.0f);
             if(axis.x < 0)
             {
                 weapon.transform.eulerAngles = new Vector3(0, 0, -90);
+                boxOffset = new Vector2(0, boxOffset.y);
+                weapon.transform.localPosition = new Vector3(.15f, .35f, 0);
             }
             else
             {
                 weapon.transform.eulerAngles = new Vector3(0, 0, 90);
+                boxOffset = new Vector2(0,boxOffset.y);
+                weapon.transform.localPosition = new Vector3(-.15f, .35f, 0);
             }
 			//Sets up walking left/right animation
 		} else if (Mathf.Abs (axis.x) < Mathf.Abs (axis.y)) {
@@ -99,10 +104,14 @@ public class PlayerMovement : MonoBehaviour
             if(axis.y < 0)
             {
                 weapon.transform.eulerAngles = new Vector3(0, 0, 0);
+                boxOffset = new Vector2(0, boxOffset.y);
+                weapon.transform.localPosition = new Vector3(-.15f, .57f, 0);
             }
             else
             {
                 weapon.transform.eulerAngles = new Vector3(0, 0, 180);
+                boxOffset = new Vector2(0, boxOffset.y);
+                weapon.transform.localPosition = new Vector3(.15f, .2f, 0);
             }
 			//Sets up walking up/down animation
 		} else if (axis == Vector2.zero) {

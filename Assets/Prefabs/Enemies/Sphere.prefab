@@ -210,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.38917601, y: 3.54362869, z: 0}
+  m_LocalPosition: {x: 9.51000023, y: -2.83999991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 472658}
@@ -322,9 +322,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .0035238266, y: .119420767}
+  m_Offset: {x: .0035238266, y: .275000006}
   serializedVersion: 2
-  m_Size: {x: .753328204, y: .23884058}
+  m_Size: {x: .753328204, y: .550000012}
 --- !u!95 &9578930
 Animator:
   serializedVersion: 3
@@ -365,8 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 0
-  hitPoints: 2
-  maxHitPoints: 3
+  hitPoints: 1
+  maxHitPoints: 1
   money: 5
   moneyText: {fileID: 0}
   GUI: {fileID: 0}
@@ -660,6 +660,14 @@ Prefab:
       propertyPath: damageSound
       value: 
       objectReference: {fileID: 8300000, guid: e9ee1dac67842cc40894b8d3a3c627fd, type: 3}
+    - target: {fileID: 0}
+      propertyPath: maxHitPoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hitPoints
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128000}

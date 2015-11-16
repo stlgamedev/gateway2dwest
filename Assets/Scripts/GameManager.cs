@@ -8,6 +8,7 @@ using UnityEngine.UI;					//Allows us to use UI.
 	
 public class GameManager : MonoBehaviour
 {
+    public bool shouldCreatePlayers = false;
     [Range(1,4)]
 	public int numberOfPlayers = 4;
 	public static GameManager instance = null;				//Static instance of GameManager which allows it to be accessed by any other script.
@@ -40,6 +41,15 @@ public class GameManager : MonoBehaviour
 			Destroy (gameObject);	
 		}
 
+		//Get a component reference to the attached BoardManager script
+		boardScript = GetComponent<BoardManager> ();
+			
+		//Call the InitGame function to initialize the first level 
+		InitGame ();
+	}
+
+    void CreatePlayers()
+    {
         Transform[] objectsToFollow = new Transform[4];
 
         //Simplified player sprites into an array rather then 4 independent variables.
@@ -54,35 +64,42 @@ public class GameManager : MonoBehaviour
                 players[i].transform.parent = transform;
                 players[i].GetComponent<Status>().playerID = i;
                 players[i].GetComponent<Status>().GUI = playerGui[i];
+                InputHelper ih = players[i].GetComponent<PlayerMovement>().inputHelper = new InputHelper();
+                ih.horizontalAxis = "Horizontal" + (i + 1);
+                ih.verticalAxis = "Vertical" + (i + 1);
+                ih.attackButton = "Player " + (i + 1) + " Attack";
             }
         }
 
+        for (int i = 0; i < 4; i++)
+        {
+            if (players[i] == null)
+            {
+                playerGui[i].SetActive(false);
+            }
+        }
         CameraFollow camera = Camera.main.GetComponent<CameraFollow>();
-		camera.objectsToFollow = objectsToFollow;
-	
-
-		//Get a component reference to the attached BoardManager script
-		boardScript = GetComponent<BoardManager> ();
-			
-		//Call the InitGame function to initialize the first level 
-		InitGame ();
-	}
+        camera.objectsToFollow = objectsToFollow;
+    }
 		
 	//This is called each time a scene is loaded.
 	void OnLevelWasLoaded (int index)
 	{
 		//Add one to our level number.
 		level++;
-		//Call InitGame to initialize our level.
-		InitGame ();
+        //Call InitGame to initialize our level.
+        InitGame ();
 	}
 		
 	//Initializes the game for each level.
 	void InitGame ()
 	{
-			
-		//Call the SetupScene function of the BoardManager script, pass it current level number.
-		boardScript.SetupScene (level);
+        if (shouldCreatePlayers)
+        {
+            CreatePlayers();
+        }
+        //Call the SetupScene function of the BoardManager script, pass it current level number.
+        boardScript.SetupScene (level);
 			
 	}
 		

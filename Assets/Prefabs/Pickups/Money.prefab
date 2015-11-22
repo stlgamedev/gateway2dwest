@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21228244}
   - 114: {fileID: 11432110}
   - 61: {fileID: 6160424}
+  - 114: {fileID: 11480412}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -56,6 +57,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyToGive: 5
   pickupSound: {fileID: 8300000, guid: 5dd792107b228564091094e806a20965, type: 3}
+--- !u!114 &11480412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89908ae478a4824d80e8ed855af4a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instanceID: 0
 --- !u!212 &21228244
 SpriteRenderer:
   m_ObjectHideFlags: 1

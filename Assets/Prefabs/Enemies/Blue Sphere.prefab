@@ -95,9 +95,9 @@ GameObject:
   - 114: {fileID: 11405740}
   - 114: {fileID: 11420102}
   - 114: {fileID: 11407212}
-  - 114: {fileID: 11483468}
+  - 114: {fileID: 11483106}
   m_Layer: 9
-  m_Name: Sphere
+  m_Name: Blue Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.51000023, y: -2.83999991, z: 0}
+  m_LocalPosition: {x: 19.7440376, y: -6.33299255, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 472658}
@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 0
-  hitPoints: 1
-  maxHitPoints: 1
+  hitPoints: 3
+  maxHitPoints: 3
   money: 5
   moneyText: {fileID: 0}
   GUI: {fileID: 0}
@@ -399,8 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9796ccaddcbfc7147a6a4787fe0362d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 7
-  speed: 1
+  range: 9
+  speed: 2
   needsLineOfSight: 0
 --- !u!114 &11450396
 MonoBehaviour:
@@ -416,7 +416,7 @@ MonoBehaviour:
   objectToDestroyOnDeath: {fileID: 128000}
   objectsToDisable:
   - {fileID: 128000}
---- !u!114 &11483468
+--- !u!114 &11483106
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -453,7 +453,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3556c2b2617013d4494cc5102abf5bdf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!212 &21218320
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -479,7 +479,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300012, guid: fdef246be15459d44b05f868ef7aba5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!212 &21219942
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -505,7 +505,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300002, guid: fdef246be15459d44b05f868ef7aba5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!212 &21257154
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -531,7 +531,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300008, guid: fdef246be15459d44b05f868ef7aba5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!212 &21259512
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -557,7 +557,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: fdef246be15459d44b05f868ef7aba5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!212 &21265140
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -583,7 +583,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300006, guid: fdef246be15459d44b05f868ef7aba5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!212 &21265814
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -635,7 +635,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300010, guid: fdef246be15459d44b05f868ef7aba5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!212 &21285794
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -661,7 +661,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300004, guid: fdef246be15459d44b05f868ef7aba5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: .337931156, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -683,6 +683,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: .241379261
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

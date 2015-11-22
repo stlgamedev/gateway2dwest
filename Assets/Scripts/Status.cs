@@ -22,27 +22,42 @@ public class Status : MonoBehaviour {
 	void Start () {
         rend = GetComponent<Renderer>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(moneyText == null && playerID >= 0 && GUI != null)
+    
+    public void ResetGUI()
+    {
+        if (GUI == null)
+        {
+            GUI = GameObject.Find("Player " + (playerID+1) + " GUI");
+            GameManager.instance.playerGui[playerID] = GUI;
+        }
+        if (playerID >= 0 && GUI != null)
         {
             moneyText = GUI.transform.FindChild("Money").GetComponent<Text>();
-            UpdateHearts();
+            moneyText.text = "$" + money;
         }
+        UpdateHearts();
+    }
 
-		if (poisioned) {
-			hitPoints -= Time.deltaTime * 5.0f;
-		}
+    void OnLevelWasLoaded(int index)
+    {
+        ResetGUI();
+    }
+        // Update is called once per frame
+    void Update () {
+    
 
-        if(!canTakeDamage)
-        {
-            rend.material.color = Color.red; //Changes color to red when taking damage
-        }
-        else
-        {
-            rend.material.color = Color.white; //Sets color to white when not taking damage
-        }
+	if (poisioned) {
+		hitPoints -= Time.deltaTime * 5.0f;
+	}
+
+    if(!canTakeDamage)
+    {
+        rend.material.color = Color.red; //Changes color to red when taking damage
+    }
+    else
+    {
+        rend.material.color = Color.white; //Sets color to white when not taking damage
+    }
 	}
 
     public virtual void TakeDamage(float damageToDeal)// creates imposter to not throw errors.

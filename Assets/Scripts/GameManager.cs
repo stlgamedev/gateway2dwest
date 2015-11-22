@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	public int numberOfPlayers = 4;
 	public static GameManager instance = null;				//Static instance of GameManager which allows it to be accessed by any other script.
 
+    public int targetDoor = -1;
     public GameObject[] playerSprites = new GameObject[4];
     public GameObject[] playerGui = new GameObject[4];
     [HideInInspector]
@@ -57,18 +58,26 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < numberOfPlayers; i++)
         {
             //only adds the player if the player has been set. Should allow for
-            if (playerSprites != null && playerSprites.Length > 0 && playerSprites[i] != null)
+            if (playerSprites != null && playerSprites.Length > 0 && playerSprites[i] != null && shouldCreatePlayers)
             {
                 players[i] = Instantiate(playerSprites[i]);
                 objectsToFollow[i] = players[i].transform;
                 players[i].transform.parent = transform;
                 players[i].GetComponent<Status>().playerID = i;
                 players[i].GetComponent<Status>().GUI = playerGui[i];
-                InputHelper ih = players[i].GetComponent<PlayerMovement>().inputHelper = new InputHelper();
+                players[i].transform.localPosition = Vector3.zero;
+                /*InputHelper ih = );
                 ih.horizontalAxis = "Horizontal" + (i + 1);
                 ih.verticalAxis = "Vertical" + (i + 1);
                 ih.attackButton = "Player " + (i + 1) + " Attack";
+                ih.transform.parent = players[i].transform;
+                players[i].GetComponent<PlayerMovement>().inputHelper = ih;*/
             }
+            if(!shouldCreatePlayers)
+            {
+                players[i].transform.localPosition = Vector3.zero;
+            }
+            players[i].GetComponent<Status>().ResetGUI();
         }
 
         for (int i = 0; i < 4; i++)
@@ -80,6 +89,7 @@ public class GameManager : MonoBehaviour
         }
         CameraFollow camera = Camera.main.GetComponent<CameraFollow>();
         camera.objectsToFollow = objectsToFollow;
+        shouldCreatePlayers = false;
     }
 		
 	//This is called each time a scene is loaded.
@@ -88,6 +98,20 @@ public class GameManager : MonoBehaviour
 		//Add one to our level number.
 		level++;
         //Call InitGame to initialize our level.
+        Door[] doors = GameObject.FindObjectsOfType<Door>();
+        foreach (Door d in doors)
+        {
+            if (d.id == targetDoor)
+            {
+                transform.position = d.transform.position + d.spawnOffset;
+            }
+        }
+        for(int i = 0; i < numberOfPlayers; i ++)
+        {
+            players[i].transform.localPosition = Vector3.zero;
+            //players[i].GetComponent<Status>().ResetGUI();
+            //playerGui[i] = players[i].GetComponent<Status>().GUI;
+        }
         InitGame ();
 	}
 		

@@ -5,6 +5,7 @@ public class MoneyPickup : MonoBehaviour {
     public float moneyToGive = 5;
     public AudioClip pickupSound;
     // Use this for initialization
+
     void OnCollisionEnter2D(Collision2D col)
     {
         OnTriggerEnter2D(col.collider);
@@ -14,14 +15,17 @@ public class MoneyPickup : MonoBehaviour {
     {
         if (LayerMask.LayerToName(col.gameObject.layer) == "Player")
         {
-            col.transform.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
             //Send message to whoever picked up the money.
-
-            SoundManager.instance.PlaySingle(pickupSound);
+            col.transform.BroadcastMessage("GiveMoney", moneyToGive, SendMessageOptions.DontRequireReceiver);
+            
 
             //Play sound when picked up.
-            Destroy(gameObject);
-            //Destroy self after doing all that.
+            SoundManager.instance.PlaySingle(pickupSound);
+
+
+            //Setting to inactive state, so if we come back to the level, it will be pickedup still.
+            BroadcastMessage("SetInactive");
+            
         }
     }
 }

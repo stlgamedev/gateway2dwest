@@ -6,9 +6,18 @@ public class DestroyOnDeath : MonoBehaviour {
     public GameObject[] objectsToDisable;
     public void DestroyObject()
     {
-        Debug.Log("Destroying " + objectToDestroyOnDeath.name);
-        Destroy(objectToDestroyOnDeath);
+        if (objectToDestroyOnDeath.GetComponent<RememberActiveStatus>() != null)
+        {
+            Debug.Log("Saves. Deactivating " + objectToDestroyOnDeath.name);
+            objectToDestroyOnDeath.GetComponent<RememberActiveStatus>().SetInactive();
+        }
+        else
+        {
+            Debug.Log("Does not save. Destroying " + objectToDestroyOnDeath.name);
+            Destroy(objectToDestroyOnDeath);
+        }
     }
+    
     public void Die()
     {
         foreach(GameObject go in objectsToDisable)

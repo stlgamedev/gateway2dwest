@@ -25,12 +25,12 @@ public class Status : MonoBehaviour {
     
     public void ResetGUI()
     {
-        if (GUI == null)
+        if (playerID >= 0 && GUI == null)
         {
             GUI = GameObject.Find("Player " + (playerID+1) + " GUI");
             GameManager.instance.playerGui[playerID] = GUI;
         }
-        if (playerID >= 0 && GUI != null)
+        if (playerID >= 0 && GUI != null && transform.tag == "Player")
         {
             moneyText = GUI.transform.FindChild("Money").GetComponent<Text>();
             moneyText.text = "$" + money;

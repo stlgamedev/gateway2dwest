@@ -44,52 +44,58 @@ public class GameManager : MonoBehaviour
 
 		//Get a component reference to the attached BoardManager script
 		boardScript = GetComponent<BoardManager> ();
-			
-		//Call the InitGame function to initialize the first level 
-		InitGame ();
+
+        //Call the InitGame function to initialize the first level 
+        if (shouldCreatePlayers)
+        {
+            InitGame();
+        }
 	}
 
     void CreatePlayers()
     {
-        Transform[] objectsToFollow = new Transform[4];
-
-        //Simplified player sprites into an array rather then 4 independent variables.
-        //This should make iteration easier.
-        for (int i = 0; i < numberOfPlayers; i++)
+        if (shouldCreatePlayers)
         {
-            //only adds the player if the player has been set. Should allow for
-            if (playerSprites != null && playerSprites.Length > 0 && playerSprites[i] != null && shouldCreatePlayers)
-            {
-                players[i] = Instantiate(playerSprites[i]);
-                objectsToFollow[i] = players[i].transform;
-                players[i].transform.parent = transform;
-                players[i].GetComponent<Status>().playerID = i;
-                players[i].GetComponent<Status>().GUI = playerGui[i];
-                players[i].transform.localPosition = Vector3.zero;
-                /*InputHelper ih = );
-                ih.horizontalAxis = "Horizontal" + (i + 1);
-                ih.verticalAxis = "Vertical" + (i + 1);
-                ih.attackButton = "Player " + (i + 1) + " Attack";
-                ih.transform.parent = players[i].transform;
-                players[i].GetComponent<PlayerMovement>().inputHelper = ih;*/
-            }
-            if(!shouldCreatePlayers)
-            {
-                players[i].transform.localPosition = Vector3.zero;
-            }
-            players[i].GetComponent<Status>().ResetGUI();
-        }
+            Transform[] objectsToFollow = new Transform[4];
 
-        for (int i = 0; i < 4; i++)
-        {
-            if (players[i] == null)
+            //Simplified player sprites into an array rather then 4 independent variables.
+            //This should make iteration easier.
+            for (int i = 0; i < numberOfPlayers; i++)
             {
-                playerGui[i].SetActive(false);
+                //only adds the player if the player has been set. Should allow for
+                if (playerSprites != null && playerSprites.Length > 0 && playerSprites[i] != null && shouldCreatePlayers)
+                {
+                    players[i] = Instantiate(playerSprites[i]);
+                    objectsToFollow[i] = players[i].transform;
+                    players[i].transform.parent = transform;
+                    players[i].GetComponent<Status>().playerID = i;
+                    players[i].GetComponent<Status>().GUI = playerGui[i];
+                    players[i].transform.localPosition = Vector3.zero;
+                    /*InputHelper ih = );
+                    ih.horizontalAxis = "Horizontal" + (i + 1);
+                    ih.verticalAxis = "Vertical" + (i + 1);
+                    ih.attackButton = "Player " + (i + 1) + " Attack";
+                    ih.transform.parent = players[i].transform;
+                    players[i].GetComponent<PlayerMovement>().inputHelper = ih;*/
+                }
+                if (!shouldCreatePlayers)
+                {
+                    players[i].transform.localPosition = Vector3.zero;
+                }
+                players[i].GetComponent<Status>().ResetGUI();
             }
+
+            for (int i = 0; i < numberOfPlayers -1; i++)
+            {
+                if (players[i] == null)
+                {
+                    playerGui[i].SetActive(false);
+                }
+            }
+            CameraFollow camera = Camera.main.GetComponent<CameraFollow>();
+            camera.objectsToFollow = objectsToFollow;
+            shouldCreatePlayers = false;
         }
-        CameraFollow camera = Camera.main.GetComponent<CameraFollow>();
-        camera.objectsToFollow = objectsToFollow;
-        shouldCreatePlayers = false;
     }
 		
 	//This is called each time a scene is loaded.
@@ -108,9 +114,10 @@ public class GameManager : MonoBehaviour
         }
         for(int i = 0; i < numberOfPlayers; i ++)
         {
-            players[i].transform.localPosition = Vector3.zero;
-            //players[i].GetComponent<Status>().ResetGUI();
-            //playerGui[i] = players[i].GetComponent<Status>().GUI;
+            if (players[i] != null)
+            {
+                players[i].transform.localPosition = Vector3.zero;
+            }
         }
         InitGame ();
 	}
@@ -123,7 +130,7 @@ public class GameManager : MonoBehaviour
             CreatePlayers();
         }
         //Call the SetupScene function of the BoardManager script, pass it current level number.
-        boardScript.SetupScene (level);
+        //boardScript.SetupScene (level);
 			
 	}
 		

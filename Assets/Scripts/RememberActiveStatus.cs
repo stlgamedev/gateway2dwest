@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class RememberActiveStatus : MonoBehaviour {
     public int instanceID = -1;
@@ -48,7 +50,7 @@ public class RememberActiveStatus : MonoBehaviour {
     }
 }
 
-
+#if UNITY_EDITOR
 public class GenerateGuids : ScriptableWizard
 {
     [MenuItem("Window/CM Tools/Generate Guids for RememberActiveStatus")]
@@ -69,3 +71,4 @@ public class GenerateGuids : ScriptableWizard
         PlayerPrefs.DeleteAll();
     }
 }
+#endif

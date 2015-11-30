@@ -40,8 +40,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalAxis: Horizontal3
+  rightButton: 
+  leftButton: 
+  upButton: 
+  downButton: 
   verticalAxis: Vertical3
   attackButton: Player 3 Attack
+  magicButton: Player 1 Magic
+  confirm: Player 1 Confirm
+  cancel: Player 1 Cancel
+  select: Player 1 Select
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -60,6 +68,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: attackButton
       value: Player 3 Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rightButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: leftButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: upButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: downButton
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

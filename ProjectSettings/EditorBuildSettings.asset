@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Randy's Level.unity
   - enabled: 1
     path: Assets/Scenes/Small Square.unity
+  - enabled: 1
+    path: Assets/Scenes/Small Room.unity
